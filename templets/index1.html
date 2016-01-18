@@ -1,0 +1,65 @@
+
+<div class="tabs-striped tabs-top tabs-background-light tabs-color-dark">
+    <div class="tabs" id="airline_type">
+      <a class="tab-item" href="#">单程</a>
+      <a class="tab-item" href="#">往返</a>
+      <a class="tab-item active" href="#">联程</a>
+    </div>
+</div>
+
+<div class="row" style="margin-top:49px">
+	<div class="col">
+    	<div class="list">
+            <label class="item item-input"><span class="input-label">出发日期</span>
+              <input type="text"  data-field="date" data-format="yyyy-MM-dd" readonly>
+            </label>
+            <label class="item item-input"><span class="input-label">出发城市</span>
+              <input type="text" id="start_city">
+            </label>
+            <label class="item item-input"><span class="input-label">到达日期</span>
+              <input type="text"  data-field="date" data-format="yyyy-MM-dd" readonly>
+            </label>
+            <label class="item item-input"><span class="input-label">到达城市</span>
+              <input type="text" id="end_city">
+            </label>
+          </div>
+
+    </div>
+</div>
+
+ <div class="content has-header">
+	<div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="出发城市">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="到达城市">
+        </label>
+      </div>
+	
+	<div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="出发日期" data-field="date" data-format="yyyy-MM-dd" readonly>
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="返回日期" data-field="date" data-format="yyyy-MM-dd" readonly>
+        </label>
+      </div>
+	<div class="padding">
+    		<button class="button button-block button-dark"> 搜索</button>
+    </div>
+
+     <div id="dtBox"></div>
+ </div>
+
+<script>
+$(function(){
+		$("#dtBox").DateTimePicker({
+			dateFormat: "yyyy-MM-dd",
+		});
+		$("#airline_type a").tap(function(){
+		  $("#airline_type a").removeClass('active');
+		  $(this).addClass('active');
+		});
+	})
+</script>
