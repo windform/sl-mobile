@@ -6,23 +6,53 @@ body{
     background:#eee;
     overflow-x:hidden;
     overflow-y: auto;
-}		
-.sl_content{
-			position:absolute;
-			width:100%;
-			top: 0px;
-			bottom: 49px;
-			padding-top: 43px;
-			background:#eee;
-     		overflow-x:hidden;
-			overflow-y:auto;
+}
+
+.frame_header,.frame_header1{
+		width:100%;
+		height:43px;
+		position:fixed;
+		top:0;
+		left:0;	
+}
+		
+	.frame_content{
+		position:absolute;
+		width:100%;
+		top: 43px;
+		bottom: 49px;
+		background:#eee;
+     	overflow-x:hidden;
+		overflow-y:auto;
+	
 		}
-		.tab-active{
+		
+	.frame_content1{
+		position:absolute;
+		width:100%;
+		top: 43px;
+		bottom: 0px;
+		background:#eee;
+     	overflow-x:hidden;
+		overflow-y:auto;
+	
+		}
+		
+	.frame_footer{
+		width:100%;
+		height:49px;
+		position:fixed;
+		bottom:0;
+		left:0;
+		}
+				
+
+.tab-active{
 			background: #111111;
 		}
 
 		
-		.loading{
+.loading{
 			width:50px;
 			height:54px;
 			/*background-color:rgba(0,0,0,0.3);
@@ -32,13 +62,13 @@ body{
 			z-index:100;
             opacity: 0;
 			}
-		.loading img {
+.loading img {
 			width:100%;
 			}
-        .row_paddingno{
+.row_paddingno{
             padding: 0 !important;
 		}
-        .col_paddingno{
+.col_paddingno{
             padding: 0 !important;
 		}
 #airline_type{
@@ -85,7 +115,7 @@ body{
 
 .type_tabs{
     display: none;
-    margin-top: 60px;
+    margin-top: 10px;
     margin-bottom: 10px;
     border-bottom: solid 1px #ddd;
 
@@ -98,6 +128,46 @@ body{
    border-bottom: solid 1px #ddd;
      /*box-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);*/
 }
+
+.search_list{
+	margin-top:44px;p
+}
+
+.search_list .list .item{
+	padding: 10px;
+	height: 95px;
+}
+.search_item{
+	height: 25px;
+}
+
+.search_list_detail .list .item{
+	padding: 0px;
+}
+
+.search_shell .search_item span{
+	padding: 2px 3px;
+	font-size: 13px;
+	color: #000;
+}
+
+.search_shell .search_item span.price,.search_shell .search_item span.ticket_price,.search_shell .search_item span.ticket_point,.search_shell .search_item span.seat,.search_shell .search_item span.cabin{
+	float: right;
+	position: relative;
+	/* top: -20px; */
+}
+
+span.price{
+	font-weight: bolder;
+	font-size: 14px!important;
+}
+
+.fr{
+	float: right;
+	min-height: 42px!important;
+}
+
+
 
 
 

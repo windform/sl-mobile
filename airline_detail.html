@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="css/ionic.css">
+	<link rel="stylesheet" href="css/ionicons.css">
+	<link rel="stylesheet" href="css/DateTimePicker.css">
+	<link rel="stylesheet" type="text/css" href="css/mobile-select-area.css">
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+    <script src="js/zepto.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/basic.js"></script>
+    <script src="js/effects.js"></script>
+    <!--<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>-->
+    <script src="js/fx_methods.js"></script>
+	<script src="js/DateTimePicker-Zepto.js"></script>
+	<script src="js/dialog.js"></script>
+	<script src="js/mobile-select-area.js"></script>
+	<style>
+		.canbin_con{
+			padding: 10px;
+			background: #fff;
+			border-bottom: solid 1px #ddd;
+			box-shadow: 0px 2px 5px rgba(0,0,0,.5);
+
+		}
+		.canbin_con .search_item span{
+			font-size: 15px;
+			padding: 2px 3px;
+		}
+
+		.canbin_con .search_item span.start_reach{
+			font-weight: bolder;
+		}
+
+		.canbin_con .search_item span.logo,.canbin_con .search_item span.company,.canbin_con .search_item span.air_type,.canbin_con .search_item span.stop,.canbin_con .search_item span.food,.canbin_con .search_item span.logo,.canbin_con .search_item span.time{
+			float: right;
+		}
+
+		.detail_shell span.price,.detail_shell span.ticket_price,.detail_shell span.ticket_point{
+			float: right;
+			margin-right: 8px;
+		}
+
+		.detail_shell span{
+			font-size: 13px;
+		}
+
+		.detail_shell span.cabin{
+			font-size: 15px;
+			font-weight: bolder;
+		}
+
+
+	
+	</style>
+</head>
+<body>
+	<div class="frame_header1">
+		<div class="bar bar-header bar-dark">
+		<a class="button icon-left ion-ios-arrow-back button-clear button-light" onClick="window.history.back()"></a>
+		<h1 class="title">预定舱位</h1>
+		<!-- <a class="button icon-right button-clear button-light">共52趟</a>-->
+		</div> 
+	</div>
+	<div class="frame_content1">
+		<div class="canbin_con">
+			<div class="search_item">
+	    		<span class="start_reach">北京—上海</span>
+	    		<span class="food">有餐食</span>
+	    		<span class="stop">不经停</span>
+	    		<span class="air_type">321</span>
+	    		<span class="company">吉祥HO1252</span>
+	    		<span class="logo">logo</span>
+	    	</div>
+	    	<div class="search_item">
+	    		<span class="date">2016-01-12 周二</span>
+	    		<span class="time">06:35-08:45</span>
+	    	</div>
+		</div>
+		<div class="search_list_detail">
+<!-- 			<div class="list">
+	<div class="item">
+		<div class="row">
+			<div class="col col-80">
+				<div class="detail_shell">
+					<span class="cabin">R舱45折</span>
+					<span class="price">￥541.52</span>
+				</div>
+				<div class="detail_shell">
+					<span class="seat">座位数:>9</span>
+					<span class="ticket_point">返点:3.3%</span>
+					<span class="ticket_price">票面价:￥560</span>	
+				</div>
+			</div>
+			<div class="col col-20">
+				<button class="button button-assertive fr">预定</button>
+			</div>
+		</div>
+	</div>
+</div> -->
+						
+		</div>
+	</div>
+
+	<script>
+		$(function(){
+			var list='<div class="list">';
+			for(var i=0; i<data.length; i++){
+				list+='<div class="item"><div class="row">'
+					+'<div class="col col-80">'
+					+'<div class="detail_shell"><span class="cabin">'+data[i].cabin+'</span><span class="price">'+data[i].price+'</span></div>'
+					+'<div class="detail_shell"><span class="seat">座位数:'+data[i].seat+'</span><span class="ticket_point">返点:'+data[i].ticket_point+'</span><span class="ticket_price">票面价:'+data[i].ticket_price+'</span></div>'
+					+'</div>'
+					+'<div class="col col-20"><button class="button button-assertive fr" id="advance">预定</button></div>'
+					+'</div></div>'
+			}
+			list+='</div>';
+			$(".search_list_detail").html(list);
+
+		})
+
+	
+		var data=[{
+			"price":"￥541.52",
+			"ticket_point":"3.3%",
+			"ticket_price":"￥560",
+			"seat":">9",
+			"cabin":"45折R舱"
+		},{
+			"price":"￥571.52",
+			"ticket_point":"3.0%",
+			"ticket_price":"￥580",
+			"seat":">3",
+			"cabin":"45折R舱"
+		},{
+			"price":"￥300.52",
+			"ticket_point":"1.2%",
+			"ticket_price":"￥800",
+			"seat":">5",
+			"cabin":"45折R舱"
+		},{
+			"price":"￥1800.52",
+			"ticket_point":"5.0%",
+			"ticket_price":"￥800",
+			"seat":">6",
+			"cabin":"头等舱"
+		},{
+			"price":"￥900.00",
+			"ticket_point":"4.2%",
+			"ticket_price":"￥1200",
+			"seat":">8",
+			"cabin":"78折C舱"
+		}]
+	</script>
+</body>
+</html>
