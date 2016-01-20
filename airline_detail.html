@@ -20,44 +20,6 @@
 	<script src="js/DateTimePicker-Zepto.js"></script>
 	<script src="js/dialog.js"></script>
 	<script src="js/mobile-select-area.js"></script>
-	<style>
-		.canbin_con{
-			padding: 10px;
-			background: #fff;
-			border-bottom: solid 1px #ddd;
-			box-shadow: 0px 2px 5px rgba(0,0,0,.5);
-
-		}
-		.canbin_con .search_item span{
-			font-size: 15px;
-			padding: 2px 3px;
-		}
-
-		.canbin_con .search_item span.start_reach{
-			font-weight: bolder;
-		}
-
-		.canbin_con .search_item span.logo,.canbin_con .search_item span.company,.canbin_con .search_item span.air_type,.canbin_con .search_item span.stop,.canbin_con .search_item span.food,.canbin_con .search_item span.logo,.canbin_con .search_item span.time{
-			float: right;
-		}
-
-		.detail_shell span.price,.detail_shell span.ticket_price,.detail_shell span.ticket_point{
-			float: right;
-			margin-right: 8px;
-		}
-
-		.detail_shell span{
-			font-size: 13px;
-		}
-
-		.detail_shell span.cabin{
-			font-size: 15px;
-			font-weight: bolder;
-		}
-
-
-	
-	</style>
 </head>
 <body>
 	<div class="frame_header1">
@@ -116,11 +78,15 @@
 					+'<div class="detail_shell"><span class="cabin">'+data[i].cabin+'</span><span class="price">'+data[i].price+'</span></div>'
 					+'<div class="detail_shell"><span class="seat">座位数:'+data[i].seat+'</span><span class="ticket_point">返点:'+data[i].ticket_point+'</span><span class="ticket_price">票面价:'+data[i].ticket_price+'</span></div>'
 					+'</div>'
-					+'<div class="col col-20"><button class="button button-assertive fr" id="advance">预定</button></div>'
+					+'<div class="col col-20"><button class="button button-assertive fr advance">预定</button></div>'
 					+'</div></div>'
 			}
 			list+='</div>';
 			$(".search_list_detail").html(list);
+
+			$('.advance').live('tap',function(){
+				 window.location.href='advance.html';
+			})
 
 		})
 

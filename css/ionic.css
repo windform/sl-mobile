@@ -6480,7 +6480,10 @@ button.item.item-button-right {
 .card {
   padding-top: 1px;
   padding-bottom: 1px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+ /*  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);  */
+  border:solid 1px #ccc;
+
+}
   .card .item {
     border-left: 0;
     border-right: 0; }

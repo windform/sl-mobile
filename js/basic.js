@@ -14,6 +14,7 @@ $(function () {
         return false;
     });
 
+    //机票搜索选项卡切换js
     $("#airline_type a").live('tap', function () {
         $("#airline_type a").removeClass('active');
         $(this).addClass('active');
@@ -23,16 +24,13 @@ $(function () {
 	
 	exchange();
 	
+    //日期选择器插件
 	$("#dtBox").DateTimePicker({ dateFormat: "yyyy-MM-dd" });
 
 	$("#search").live('tap',function(){
 		window.location.href='search_list.html';
 	});
 
-    $("#advance").live('tap',function(){
-        alert('hello');
-        window.location.href='advance.html';
-    });
 
 
 });
