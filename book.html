@@ -50,13 +50,13 @@
     <div class="col col_paddingno">
          <label class="item item-input item-floating-label item_no_border">
           <span class="input-label has-input">出发城市</span>
-          <input class="input_bottom_border start_city" type="text" placeholder="出发城市">
+          <input class="input_bottom_border start_city" type="text" placeholder="出发城市" readonly>
         </label>
     </div>
     <div class="col col_paddingno">
         <label class="item item-input item-floating-label item_no_border item_no_border_right">
           <span class="input-label has-input span_right">到达城市</span>
-          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" placeholder="到达城市">
+          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" placeholder="到达城市" readonly>
         </label>
     </div>
 </div>
@@ -81,13 +81,13 @@
     <div class="col col_paddingno">
          <label class="item item-input item-floating-label item_no_border">
           <span class="input-label has-input">出发城市</span>
-          <input class="input_bottom_border start_city" type="text" placeholder="出发城市">
+          <input class="input_bottom_border start_city" type="text" placeholder="出发城市" readonly>
         </label>
     </div>
     <div class="col col_paddingno">
         <label class="item item-input item-floating-label item_no_border item_no_border_right">
           <span class="input-label has-input span_right">到达城市</span>
-          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" placeholder="到达城市">
+          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" placeholder="到达城市" readonly>
         </label>
     </div>
 </div>
@@ -122,7 +122,7 @@
     <div class="col col_paddingno">
         <label class="item item-input item-floating-label item_no_border item_no_border_right">
           <span class="input-label has-input span_right">到达城市</span>
-          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" placeholder="到达城市">
+          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" placeholder="到达城市" readonly>
         </label>
     </div>
 </div>
@@ -145,13 +145,13 @@
     <div class="col col_paddingno">
          <label class="item item-input item-floating-label item_no_border">
           <span class="input-label has-input">出发城市</span>
-          <input class="input_bottom_border start_city" type="text" placeholder="出发城市">
+          <input class="input_bottom_border start_city" type="text" placeholder="出发城市" readonly>
         </label>
     </div>
     <div class="col col_paddingno">
         <label class="item item-input item-floating-label item_no_border item_no_border_right">
           <span class="input-label has-input span_right">到达城市</span>
-          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" placeholder="到达城市">
+          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" placeholder="到达城市" readonly>
         </label>
     </div>
 </div>
@@ -185,13 +185,13 @@
   <style>
 .city{
   position: fixed;
-  left: 0;
+  left: 500px;
   top: 0px;
   bottom: 0;
   right: 0;
   background-color: #eee;
   z-index: 100;
-  overflow: scroll;
+  opacity: 1;
 }
 
 .catalog{
@@ -199,7 +199,7 @@
   height: auto;
   position: fixed;
   z-index: 101;
-  right: 5px;
+  right: -495px;
   top:60px;
 }
 
@@ -208,54 +208,73 @@
   width: 30px;
  color: #fff;
  margin-top: 1px;
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0,0,0,.8); 
   text-decoration: none;
   text-align: center;
   font-size: 10px;
   padding: 0px;
 }
 
+.citylist{
+  position: fixed;
+  top: 113px;
+  left: 500px;
+  bottom: 0px;
+  right: 0px;
+  overflow-x: hidden;
+  overflow-y:auto; 
+}
+
   </style>
 
 
- <div class="city">
-    <div class="bar bar-header bar-dark">
-      <a class="button icon-left ion-ios-arrow-back button-clear button-light"></a>
-      <h1 class="title">选择城市</h1>
-    </div>
-    <div class="list list-inset" style="margin-top:55px; margin-bottom:10px">
-      <label class="item item-input">
-        <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="请输入城市名">
-      </label>
-    </div>
-    <div class="citylist">
-      
-    </div>
-<!--   <div class="list city_font">
-      <div class="item item-divider">
-        热门城市
-      </div>
-      <a class="item">
-        北京
-      </a>
-       <a class="item">
-        上海
-      </a>
-    </div> -->
-  </div>	
+<!--  <div class="city">
+  <div class="bar bar-header bar-dark">
+    <a class="button icon-left ion-ios-arrow-back button-clear button-light"></a>
+    <h1 class="title">选择城市</h1>
+  </div>
+  <div class="list list-inset" style="margin-top:55px; margin-bottom:10px">
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="text" placeholder="请输入城市名">
+    </label>
+  </div>
+  <div class="citylist">
 
-    <div class="catalog">
-      <!-- <div>
-        <a href="#">热门</a>
-      </div> -->
-    </div>
+  </div>
+  <div class="catalog">
+
+  </div>
+</div>  
+-->
+
 
 
 
   <script>
     $(function(){
-      $.ajax({
+      $(".start_city,.end_city").focus(function(event) {
+         
+            //console.log(value);
+           var city='<div class="city"><div class="bar bar-header bar-dark"><a class="button icon-left ion-ios-arrow-back button-clear button-light"></a><h1 class="title">选择城市</h1></div><div class="list list-inset" style="margin-top:55px; margin-bottom:10px"><label class="item item-input"><i class="icon ion-search placeholder-icon"></i><input type="text" placeholder="请输入城市名"></label></div><div class="citylist"></div><div class="catalog"></div></div>';
+            $(city).appendTo('body');
+            $('.city,.citylist').animate({left:0},600,'ease-in');
+            $('.catalog').animate({right:5},600,'ease-in');
+            var x=output();
+            $(event.target).val(x);
+
+      });
+
+
+
+
+
+
+    })
+
+
+  function output(){
+          $.ajax({
         url:'data/city.json',
         type:'GET',
         dataType:'JSON',
@@ -272,6 +291,18 @@
             };
             list+='</div>';
             $('.citylist').html(list);
+            $(".city_font a.item").live('tap',function(event){
+              event.stopPropagation;
+              $(".city_font a.item").css('background','');
+              $(this).animate({backgroundColor:'#eee'}, 100);
+              $('.city,.citylist').animate({left:500},600,'ease-in');
+               $('.catalog').animate({right:-495,opacity:0},600,'ease-in');
+              setTimeout(function(){
+                  $('.city').remove();
+                },850);
+               h=$(this).text();
+
+            })
             var cata='<div>';
             for(var i=0; i<citydata.length; i++){
                 cata+='<a href="#'+citydata[i].id+'">'+citydata[i].name+'</a>'
@@ -281,7 +312,7 @@
 
         }
       })
-    })
+  }
 
     
   </script>
@@ -289,7 +320,7 @@
   <script>
 /*    $(function(){
       $(".start_city,.end_city").focus(function(event) {
-        var city='<div class="city"> <a class="close">关闭</a></div>';
+        var city='<div class="city"></div>';
         $(city).appendTo('body');
         $(".city").css({
           width:$(window).width(),
@@ -310,6 +341,11 @@
         })
       });
     })*/
+$(function(){
+    //日期选择器插件
+  $("#dtBox").DateTimePicker({ dateFormat: "yyyy-MM-dd" });
+
+})
   </script>
 </body>
 </html>

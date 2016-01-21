@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="css/ionic.css">
+	<link rel="stylesheet" href="css/ionicons.css">
+	<link rel="stylesheet" href="css/DateTimePicker.css">
+	<link rel="stylesheet" type="text/css" href="css/mobile-select-area.css">
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+    <script src="js/zepto.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/basic.js"></script>
+    <script src="js/effects.js"></script>
+    <!--<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>-->
+    <script src="js/fx_methods.js"></script>
+	<!-- <script src="js/DateTimePicker-Zepto.js"></script> -->
+	<script src="js/dialog.js"></script>
+	<script src="js/mobile-select-area.js"></script>
+</head>
+<body>
+	<div class="frame_header1">
+		<div class="bar bar-header bar-dark">
+		<a class="button icon-left ion-ios-arrow-back button-clear button-light" onClick="window.history.back()"></a>
+		<h1 class="title">政策选择</h1>
+		<!-- <a class="button icon-right button-clear button-light">共52趟</a>-->
+		</div> 
+	</div>
+	<div class="frame_content1">
+
+	<div class="white_bg bor_bot2 policy_default">
+		<div class="row">
+			<div class="col col-20"><span>舱位:</span></div>
+			<div class="col col-10"><span>R</span></div>
+			<div class="col col-30"><span>出票时间:</span></div>
+			<div class="col col-40"><span>00:00-23:59</span></div>
+		</div>
+		<div class="row">
+			<div class="col"><span>返点:</span></div>
+			<div class="col"><span>3.3%</span></div>
+			<div class="col"><span>机票推荐:</span></div>
+			<div class="col"><span class="policy_type">标准政策</span></div>
+		</div>
+		<div class="row row_hid">
+			<div class="col col-30"><span>票面结算价:</span></div>
+			<div class="col"><span class="red_color">￥542.52</span></div>
+			<div class="col"><span>政策类型:</span></div>
+			<div class="col"><span>B2B,PSB</span></div>
+		</div>
+		<div class="row row_hid">
+			<div class="col"><span>单张票价:</span></div>
+			<div class="col"><span class="red_color">￥591.52</span></div>
+			<div class="col"><span>单张代理费:</span></div>
+			<div class="col"><span class="red_color">￥18.48</span></div>
+		</div>
+		<div class="row row_hid">
+			<div class="col"><span>机建/燃油:</span></div>
+			<div class="col"><span>￥50/0</span></div>
+			<div class="col"></div>
+			<div class="col"></div>
+			
+		</div>
+		<a class="button ion-chevron-down policy_show"></a>
+		<a class="button ion-chevron-up policy_hide"></a>
+	</div>
+
+	<div class="card font_14">
+	  <div class="item item-divider">
+		    适用政策
+	  </div>
+	  <div class="item item-text-wrap policy_select_wrap">
+		  	<!-- <div class="policy_list bor_bot2">
+		  				    <div class="row">
+		  				    	<div class="col col-20">
+		  				    		<p>返点</p>
+		  				    		<p>3.3%</p>
+		  				    	</div>
+		  				    	<div class="col col-40">
+		  				    		<p>出票时间</p>
+		  				    		<p>00:00-23:59</p>
+		  				    	</div>
+		  				    	<div class="col col-40">
+		  				    		<p>机票推荐</p>
+		  				    		<p>标准政策</p>
+		  				    	</div>
+		  				    	<div class="col policy_num_shell"><p class="policy_num policy_num_active">政策一</p></div>
+		  				    </div>
+		  				    <div class="row">
+		  				    	<div class="col policy_remarks">
+		  				    		<p></p>
+		  				    		<p>
+		  				    			政策备注：换编码出票！此政策只适用于高价，低价不享受，否则拒单，改期、升舱、换开、签转外航以及政策航班改到无政策航班，需收回代理费需要换编码出票，外放无舱位请勿导入，否则拒单，此政策只适用于高价，低价不享受，否则拒单，改期、升舱、换开、签转外航以及政策航班改到无政策航班，需收回代理费
+		  				    		</p>
+		  				    	</div>
+		  				    </div>
+		  				</div>
+		  				<div class="policy_list bor_bot2">
+		  				    <div class="row">
+		  				    	<div class="col col-20">
+		  				    		<p>返点</p>
+		  				    		<p>3.3%</p>
+		  				    	</div>
+		  				    	<div class="col col-40">
+		  				    		<p>出票时间</p>
+		  				    		<p>00:00-23:59</p>
+		  				    	</div>
+		  				    	<div class="col col-40">
+		  				    		<p>机票推荐</p>
+		  				    		<p class="policy_type">标准政策</p>
+		  				    	</div>
+		  				    	<div class="col policy_num_shell"><p class="policy_num">政策二</p></div>
+		  				    </div>
+		  				    <div class="row">
+		  				    	<div class="col policy_remarks">
+		  				    		<p>
+		  				    			政策备注：换编码出票！此政策只适用于高价，低价不享受，否则拒单，改期、升舱、换开、签转外航以及政策航班改到无政策航班，需收回代理费需要换编码出票，外放无舱位请勿导入，否则拒单，此政策只适用于高价，低价不享受，否则拒单，改期、升舱、换开、签转外航以及政策航班改到无政策航班，需收回代理费
+		  				    		</p>
+		  				    	</div>
+		  				    </div>
+		  				</div> -->
+	  </div>
+
+	</div>
+
+<div class="row order_birth">
+	<div class="col">
+		<p>支付价格</p>
+		<p>￥1151.52</p>
+	</div>
+	<div class="col">
+		<p>总利润</p>
+		<p>￥18.48</p>
+	</div>
+	<div class="col">
+		<p>保险费</p>
+		<p>￥0.00</p>
+	</div>
+	<div class="col">
+		<button class="button button-assertive order_button">生成订单</button>
+	</div>
+</div>
+
+	</div>
+
+</body>
+</html>

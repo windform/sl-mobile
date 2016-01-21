@@ -318,7 +318,144 @@ span.price{
 	padding-bottom: 8px;
 }
 
+.policy_num_shell{
+	position: relative;
 
+}
+
+.policy_num{
+	width: 60px;
+	height: 25px;
+	text-align: center;
+	line-height: 25px;
+	border-radius:5px;
+
+	border: solid 1px #4cd964;
+	color: #4cd964 !important;
+	position: absolute;;
+	right: 5px;
+	top: 12px;
+}
+
+.policy_num_active{
+	background-color: #4cd964;
+	color: #fff!important;
+}
+
+.policy_remarks{
+	border:solid 1px #797979;
+}
+
+.order_birth{
+	background-color: #fff;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 15px;
+	border:solid 1px #ddd;
+}
+
+.order_birth div.col{
+	padding-top: 10px;
+	padding-bottom: 0px;
+	border-right: solid 1px #ddd;
+	text-align: center;
+}
+
+.order_birth div.col:last-child{
+	border-right:none;
+	padding-top: 13px;
+}
+.order_birth div.col p{
+	text-align: center;
+}
+.order_birth div.col p:last-child{
+	font-weight: bolder;
+	color: #ef473a;
+}
+
+.red_color{
+	color:#ef473a;
+}
+
+.order_birth div.col .order_button{	
+	padding: 0px 5px !important;
+}
+
+.policy_type{
+	display: inline;
+	padding: 2px 3px;
+	background: orange;
+	color: #fff!important;
+	font-weight: 100;
+
+}
+
+.policy_default div.row div.col:nth-child(2n+1){
+	color: #999;
+}
+
+.policy_default div.row div.col:nth-child(2n){
+	position: relative;
+	left: -11px;
+}
+
+.policy_default div.row:nth-child(2) div.col:nth-child(2){
+	position: relative;
+	left: -32px;
+}
+
+.policy_default div.row:nth-child(2) div.col:nth-child(3){
+	position: relative;
+	left: -60px;
+}
+
+.policy_default div.row:nth-child(2) div.col:nth-child(4){
+	position: relative;
+	left: -85px;
+}
+
+
+.policy_default div.row:nth-child(1) div.col:nth-child(4){
+	position: relative;
+	left: -45px;
+}
+
+.policy_list div.row div.col p:first-child{
+	color: #999;
+}
+
+.policy_list div.row div.col-40{
+	position: relative;
+	left: -20px;
+}
+
+.policy_default{
+	height: 87px;
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
+}
+
+.policy_default .policy_show{
+	position: absolute;
+	left: 43%;
+	bottom: -21px;
+	z-index: 3;
+	background-color: transparent !important;
+}
+
+.policy_default .policy_hide{
+	position: absolute;
+	left: 43%;
+	bottom: -21px;
+	z-index: 3;
+	background-color: transparent !important;
+	display: none;
+}
+
+.row_hid{
+	opacity:0;
+}
 
 
 
