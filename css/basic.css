@@ -218,7 +218,7 @@ span.price{
 }
 
 .bor_bot{
-	border-bottom:solid 2px #797979;
+	border-bottom:solid 1px #ddd;
 }
 
 .bor_bot1{
@@ -245,6 +245,19 @@ span.price{
 	font-size: 14px;
 }
 
+/*.font_14 .item-text-wrap div.row:nth-child(1){
+	padding: 0px;
+}
+.font_14 .item-text-wrap div.row:nth-child(1) div.col:nth-child(1) p{
+	width: 105px !important;
+}
+
+.font_14 .item-text-wrap div.row:nth-child(1) div.col:nth-child(2) p{
+	width: 50px !important;
+}
+.font_14 .item-text-wrap div.row:nth-child(1) div.col:nth-child(3) p{
+	width: 105px !important;
+}  */
 .font_14 .item-divider{
 	position: relative;
 	font-weight:bold;
@@ -275,7 +288,14 @@ span.price{
 
 .icon_mid{
 	padding-top: 13px;
+	padding-left: 0px;
+	padding-right: 35px;
 
+}
+.icon_mi{
+	position: relative;
+	left: -17%;
+	top: 9px;
 }
 
 .font_14 .item-divider a .toggle .track {
@@ -457,6 +477,88 @@ span.price{
 	opacity:0;
 }
 
+.row_detail div.col{
+
+}
+.row_detail div.col:nth-child(1) span{
+	display:block;
+	width: 75px;
+
+	/*padding: 0px;*/
+}
+.row_detail div.col:nth-child(2) span{
+	display:block;
+	width: 64px;
+
+	/*padding: 0px;*/
+}
+.row_detail div.col:nth-child(3) span{
+	display: block;
+	width: 75px;
+
+	/*padding: 0px;*/
+}
+.row_detail div.col:nth-child(4) span{
+	display: block;
+	width: 75px;
+	overflow: hidden;
+	/*padding: 0px;*/
+}
+.bor_bot3{
+	border-bottom: solid 1px #f5f5f5;
+	margin-bottom: 10px;
+	background-color: #fff;
+}
+
+.order_toggle{
+	position: relative;
+	height: 25px;
+	top: -14px;
+	border-bottom: solid 1px #ccc;
+}
+
+.order_toggle div.row_detail{
+	display: none;
+}
+
+.order_toggle_btn{
+	position: absolute;
+	bottom: -15px;
+	left: 45%;
+	background-color: transparent;
+}
+
+.order_up{display:none;}
+
+.order_read_btn{
+	font-size: 14px!important;
+	background-color: transparent;
+	position: relative;
+	top: 10px;
+
+}
+
+.row_order_rules{
+	display: none;
+}
+
+div.row_order_rules>div.col{
+	border:solid 1px #aaa;
+	padding:0px;
+}
+div.row_order_rules>div.col>div.row:nth-child(1){
+	border-bottom: solid 1px #aaa;
+}
+div.row_order_rules>div.col>div.row{
+	padding: 0px;
+}
+
+div.row_order_rules>div.col>div.row>div.col{
+	padding-top: 9px;
+}
+div.row_order_rules>div.col>div.row>div.col:nth-child(1){
+	border-right: solid 1px #aaa;
+}
 
 
 
