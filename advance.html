@@ -69,12 +69,12 @@
 	<div class="card font_14">
 	  <div class="item item-divider">
 	    乘机人    
-		<a class="button button-small button-icon icon ion-plus"></a>
+		<a class="button button-small button-icon icon ion-plus btn-plus"></a>
 	  </div>
 	  <div class="item item-text-wrap">
 	    <div class="row bor_bot2">
 	    	<div class="col col-10 icon_mid">
-	    		<a class="button button-small button-icon icon ion-minus"></a>
+	    		<a class="button button-small button-icon icon ion-minus btn-remove"></a>
 	    	</div>
 	    	<div class="col col-25">
 	    		<p>某某</p>
@@ -87,7 +87,7 @@
 	    </div>
 	    <div class="row bor_bot2">
 	    	<div class="col col-10 icon_mid">
-	    		<a class="button button-small button-icon icon ion-minus"></a>
+	    		<a class="button button-small button-icon icon ion-minus btn-remove"></a>
 	    	</div>
 	    	<div class="col col-25">
 	    		<p>某某</p>
@@ -165,5 +165,128 @@
 
 	</div>
 
+
+
+
+	<script>
+		$(function(){
+			//单击页".btn-plus"，显示"选择常旅客"和"添加常旅客"
+			$('.btn-plus').on('tap',function(event){
+					event.stopPropagation();
+					passengerSelectAdd();
+
+			});
+
+			//单击页面除".btn-plus"的任意位置，移除".passenger_staff"
+			$(document).not('.btn-plus').on('tap',function(){
+				$('.passenger_staff').animate({bottom:-200}, 300,'ease-in');
+				setTimeout(function(){
+					$('.passenger_staff').remove();
+
+				},310)
+			})
+
+			//单击"选择常旅客"，进入"选择常旅客"界面
+			$(".passenger-select").live('tap',function(){
+				event.stopPropagation();
+				$('.city').remove();
+				normalPassenger();
+				setTimeout(function(){
+					$('.passenger_staff').remove();
+				},800)
+
+			})
+
+			//单击"添加常旅客"，进入"添加常旅客"界面
+			$(".passenger-add").live('tap',function(){
+				event.stopPropagation();
+				$('.city').remove();
+				passengerAdd();
+
+
+
+
+				setTimeout(function(){
+					$('.passenger_staff').remove();
+				},800)
+
+			})
+
+
+			//删除乘客信息
+			$('.btn-remove').live('tap',function(){
+				$(this).parent().parent().remove();
+			})
+		})
+	</script>
+
+<style>
+	.passenger_mask{
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		bottom: 0px;
+		right: 0px;
+		background-color: #fff;
+		z-index: 20;
+	}
+</style>
+	<div class="passenger_mask">
+		<div class="bar bar-header bar-dark">
+			<a class="button icon-left ion-ios-arrow-back button-clear button-light" onClick="window.history.back()"></a>
+			<h1 class="title">添加新乘客</h1>
+		</div> 
+		<div class="list list-inset passenger-list">
+		  <label class="item item-input">
+		    <span class="input-label">姓名</span>
+		    <input type="text">
+		  </label>
+		  <label class="item item-input">
+		    <span class="input-label">乘客类型</span>
+		   <a class="item-icon-right" href="#">成人(>18岁)<i class="icon ion-ios-arrow-right"></i></a>
+		  </label>
+		  <label class="item item-input">
+		    <span class="input-label">证件类型</span>
+		   <a class="item-icon-right" href="#">身份证<i class="icon ion-ios-arrow-right"></i></a>
+		  </label>
+	
+		  <label class="item item-input">
+		    <span class="input-label">证件号码</span>
+		    <input type="text">
+		  </label>
+		  <label class="item item-input">
+		    <span class="input-label">手机号码</span>
+		    <input type="text">
+		  </label>
+		</div>
+		<div class="padding">
+				<button class="button button-block button-dark passenger-save">保存</button>
+				<p class="text-left">保存后自动添加为常旅客</p>
+		</div>
+
+		<div class="info_select">
+			<div class="row">
+				<div class="col col-offset-10 col-80">
+					<div class="padding">
+						<a class="button button-small fr button-icon icon ion-close btn-close"></a>
+					</div>
+					<div style="clear:both"></div>
+					<div class="list">
+						<label class="item item-radio">
+						  <input type="radio" name="group" value="go" checked="checked">
+						  <div class="item-content">
+						    Go
+						  </div>
+						  <i class=" ion-checkmark"></i>
+						</label>
+					</div>
+	
+
+
+				</div>
+			</div> 
+		</div>
+		
+	</div>
 </body>
 </html>

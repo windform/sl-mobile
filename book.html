@@ -50,13 +50,13 @@
     <div class="col col_paddingno">
          <label class="item item-input item-floating-label item_no_border">
           <span class="input-label has-input">出发城市</span>
-          <input class="input_bottom_border start_city" type="text" placeholder="出发城市" readonly>
+          <input class="input_bottom_border" id="start_city" type="text" placeholder="出发城市" readonly>
         </label>
     </div>
     <div class="col col_paddingno">
         <label class="item item-input item-floating-label item_no_border item_no_border_right">
           <span class="input-label has-input span_right">到达城市</span>
-          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" placeholder="到达城市" readonly>
+          <input dir="rtl" class="input_bottom_border input_right" id="end_city" type="text" placeholder="到达城市" readonly>
         </label>
     </div>
 </div>
@@ -182,170 +182,15 @@
  <div id="dtBox"></div>
 	</div>
 
-  <style>
-.city{
-  position: fixed;
-  left: 500px;
-  top: 0px;
-  bottom: 0;
-  right: 0;
-  background-color: #eee;
-  z-index: 100;
-  opacity: 1;
-}
-
-.catalog{
-  width: 30px;
-  height: auto;
-  position: fixed;
-  z-index: 101;
-  right: -495px;
-  top:60px;
-}
-
-.catalog a{
-  display: inline-block;
-  width: 30px;
- color: #fff;
- margin-top: 1px;
-  background-color: rgba(0,0,0,.8); 
-  text-decoration: none;
-  text-align: center;
-  font-size: 10px;
-  padding: 0px;
-}
-
-.citylist{
-  position: fixed;
-  top: 113px;
-  left: 500px;
-  bottom: 0px;
-  right: 0px;
-  overflow-x: hidden;
-  overflow-y:auto; 
-}
-
-  </style>
-
-
-<!--  <div class="city">
-  <div class="bar bar-header bar-dark">
-    <a class="button icon-left ion-ios-arrow-back button-clear button-light"></a>
-    <h1 class="title">选择城市</h1>
-  </div>
-  <div class="list list-inset" style="margin-top:55px; margin-bottom:10px">
-    <label class="item item-input">
-      <i class="icon ion-search placeholder-icon"></i>
-      <input type="text" placeholder="请输入城市名">
-    </label>
-  </div>
-  <div class="citylist">
-
-  </div>
-  <div class="catalog">
-
-  </div>
-</div>  
--->
-
-
-
 
   <script>
     $(function(){
-      $(".start_city,.end_city").focus(function(event) {
-         
-            //console.log(value);
-           var city='<div class="city"><div class="bar bar-header bar-dark"><a class="button icon-left ion-ios-arrow-back button-clear button-light"></a><h1 class="title">选择城市</h1></div><div class="list list-inset" style="margin-top:55px; margin-bottom:10px"><label class="item item-input"><i class="icon ion-search placeholder-icon"></i><input type="text" placeholder="请输入城市名"></label></div><div class="citylist"></div><div class="catalog"></div></div>';
-            $(city).appendTo('body');
-            $('.city,.citylist').animate({left:0},600,'ease-in');
-            $('.catalog').animate({right:5},600,'ease-in');
-            var x=output();
-            $(event.target).val(x);
-
-      });
-
-
-
-
-
-
+      //日期选择器插件实例化
+      $("#dtBox").DateTimePicker({ dateFormat: "yyyy-MM-dd" });
     })
-
-
-  function output(){
-          $.ajax({
-        url:'data/city.json',
-        type:'GET',
-        dataType:'JSON',
-        success:function(data){
-            //var json=JSON.parse(data);   //将json字符串转化为json对象,依赖包
-            var json=eval('('+data+')');   //将json字符串转化为json对象
-            var citydata=json.data;
-            var list='<div class="list city_font">';
-            for(var i=0; i<citydata.length; i++){
-              list+='<div class="item item-divider" id="'+citydata[i].id+'">'+citydata[i].name+'</div>';
-              for(var j=0; j<citydata[i].child.length; j++){
-                list+='<a class="item">'+citydata[i].child[j].name+'</a>';
-              }
-            };
-            list+='</div>';
-            $('.citylist').html(list);
-            $(".city_font a.item").live('tap',function(event){
-              event.stopPropagation;
-              $(".city_font a.item").css('background','');
-              $(this).animate({backgroundColor:'#eee'}, 100);
-              $('.city,.citylist').animate({left:500},600,'ease-in');
-               $('.catalog').animate({right:-495,opacity:0},600,'ease-in');
-              setTimeout(function(){
-                  $('.city').remove();
-                },850);
-               h=$(this).text();
-
-            })
-            var cata='<div>';
-            for(var i=0; i<citydata.length; i++){
-                cata+='<a href="#'+citydata[i].id+'">'+citydata[i].name+'</a>'
-            }
-            cata+='</div>';
-            $('.catalog').html(cata);
-
-        }
-      })
-  }
-
-    
   </script>
 
-  <script>
-/*    $(function(){
-      $(".start_city,.end_city").focus(function(event) {
-        var city='<div class="city"></div>';
-        $(city).appendTo('body');
-        $(".city").css({
-          width:$(window).width(),
-          height:$(window).height(),
-          backgroundColor:'orange',
-          zIndex:100,
-          position:'fixed',
-          left:500,
-          top:0
-        }).animate({left:0},800,'ease-out');
 
-        $('.close').live('tap',function(event){
-          event.stopPropagation();
-          $('.city').animate({left:500},800,'ease-in');
-          setTimeout(function(){
-            $('.city').remove();
-          },850)
-        })
-      });
-    })*/
-$(function(){
-    //日期选择器插件
-  $("#dtBox").DateTimePicker({ dateFormat: "yyyy-MM-dd" });
 
-})
-  </script>
 </body>
 </html>

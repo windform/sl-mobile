@@ -14,20 +14,37 @@ $(function () {
         return false;
     });
 
-    //机票搜索选项卡切换js
+
+    //book.html
+    //1、机票搜索选项卡切换js
     $("#airline_type a").live('tap', function () {
         $("#airline_type a").removeClass('active');
         $(this).addClass('active');
         $(".type_tabs").css('display', 'none');
         $(".type_tabs").eq($(this).index()).css('display', 'block');
     });
+
+    //2、获取城市名
+    $("#start_city").focus(function(event) {
+            event.stopPropagation();
+            output();
+
+      });
+    $("#end_city").focus(function(event) {
+            event.stopPropagation();
+            output();
+      });
+
 	
 
     $("#search").live('tap',function(){
         window.location.href='search_list.html';
     });
 
+    //3、城市交换
 	exchange();
+
+
 
     //airline_detail.html
     var list='<div class="list">';
@@ -122,13 +139,88 @@ $(function () {
     })
 
     //3、机票信息数据渲染展示
-    var order_box='<div class="order_detail_list">';
+    var order_box='<div>';
     for(var i=0;i<orderData.length;i++){
-        order_box+='<div class="row bor_bot3"><div class="col col-25"><p>'+orderData[i].name+'</p><p>身份证号</p><p>保险数量</p><p>票号</p></div><div class="col col-75"><p>'+orderData.person_type+'</p><p>610112198306184529</p><p>'orderData[i].ensure_num'</p><p>'+orderData[i].ticket_num+'</p></div></div><div class="row row_detail"><div class="col"><span>舱位:</span></div><div class="col"><span>'+orderData[i].cabin+'</span></div><div class="col"><span>票面结算价:</span></div><div class="col"><span class="red_color">'+orderData[i].ticket_price+'</span></div></div><div class="row row_detail"><div class="col"><span>机建/燃油:</span></div><div class="col"><span>'+orderData[i].airline_taste+'</span></div><div class="col"><span>单张票价:</span></div><div class="col"><span class="red_color">'+orderData[i].single_price+'</span></div></div><div class="order_toggle"><div class="row row_detail"><div class="col"><span>返点:</span></div><div class="col"><span>'+orderData[i].ticket_point+'</span></div><div class="col"><span>单张代理费:</span></div><div class="col"><span class="red_color">'+orderData[i].agent_price+'</span></div></div><div class="row row_detail"><div class="col"><span>机票推荐:</span></div><div class="col"><span class="policy_type">'+orderData[i].ticketout_recommend+'</span></div><div class="col"><span>政策类型:</span></div><div class="col"><span style="width:80px">'+orderData[i].policy_type+'</span></div></div><div class="row row_detail"><div class="col"><span>出票时间:</span></div><div class="col"><span style="width:100px">'+orderData[i].ticketout_time+'</span></div><div class="col"></div><div class="col"></div></div><a class="button ion-chevron-down order_toggle_btn order_down"></a><a class="button ion-chevron-up order_toggle_btn order_up"></a></div>'
+        order_box+='<div class="order_detail_list">'
+                +'<div class="row bor_bot3">'
+                +'<div class="col col-25">'
+                +'<p>某某</p>'
+                +'<p>身份证号</p>'
+                +'<p>保险数量</p>'
+                +'<p>票号</p>'
+                +'</div>'
+                +'<div class="col col-75">'
+                +'<p>'+orderData[i].person_type+'</p>'
+                +'<p>'+orderData[i].person_num+'</p>'
+                +'<p>'+orderData[i].ensure_num+'</p>'
+                +'<p>'+orderData[i].ticket_num+'</p>'
+                +'</div>'
+                +'</div>'
+            +'<div class="row row_detail">'
+                +'<div class="col"><span>舱位:</span></div>'
+                +'<div class="col"><span>'+orderData[i].cabin+'</span></div>'
+                +'<div class="col"><span>票面结算价:</span></div>'
+                +'<div class="col"><span class="red_color">'+orderData[i].ticket_price+'</span></div>'
+            +'</div>'
+            +'<div class="row row_detail">'
+                +'<div class="col"><span>机建/燃油:</span></div>'
+                +'<div class="col"><span>'+orderData[i].airline_taste+'</span></div>'
+                +'<div class="col"><span>单张票价:</span></div>'
+                +'<div class="col"><span class="red_color">'+orderData[i].single_price+'</span></div>'
+            +'</div>'
+            +'<div class="order_toggle">'
+                +'<div class="row row_detail">'
+                    +'<div class="col"><span>返点:</span></div>'
+                    +'<div class="col"><span>'+orderData[i].ticket_point+'</span></div>'
+                    +'<div class="col"><span>单张代理费:</span></div>'
+                    +'<div class="col"><span class="red_color">'+orderData[i].agent_price+'</span></div>'
+                +'</div>'
+                +'<div class="row row_detail">'
+                    +'<div class="col"><span>机票推荐:</span></div>'
+                    +'<div class="col"><span class="policy_type">'+orderData[i].ticketout_recommend+'</span></div>'
+                    +'<div class="col"><span>政策类型:</span></div>'
+                    +'<div class="col"><span style="width:80px">'+orderData[i].policy_type+'</span></div>'
+        
+                +'</div>'
+                +'<div class="row row_detail">'
+                    +'<div class="col"><span>出票时间:</span></div>'
+                    +'<div class="col"><span style="width:100px">'+orderData[i].ticketout_time+'</span></div> '
+                    +'<div class="col"></div>'
+                    +'<div class="col"></div>'
+                +'</div>'
+                +'<a class="button ion-chevron-down order_toggle_btn order_down"></a>'
+                +'<a class="button ion-chevron-up order_toggle_btn order_up"></a>'
+            +'</div>'
+        +'</div> '
     }
 
     order_box+='</div>';
-    $('.order_detail_wrap').html(order_box)     
+    $('.order_detail_wrap').html(order_box);
+
+    //申请退改签出现提示
+    $('.btn-ticketout').tap(function(){
+         $('.ticketout_mask').remove();
+        var mask='<div class="ticketout_mask">'
+                    +'<div class="row">'
+                        +'<div class="col col-offset-10 col-80">'
+                            +'<div class="padding">'
+                                +'<a class="button button-small fr button-icon icon ion-close btn-close"></a>'
+                            +'</div>'
+                            +'<div class="padding">'
+                                +'<p>如需办理退改签，请拨打客服专线022-84858687</p>'
+                            +'</div>'
+                            +'<div class="padding">'
+                                +'<button class="button button-block button-positive">拨打客服专线</button>'
+                            +'</div>'
+                        +'</div>'
+                    +'</div>'
+                +'</div>';
+        $('body').append(mask);
+        $('.btn-close').tap(function(){
+            $('.ticketout_mask').remove();
+        })
+    })
+
 
 });
 
@@ -147,7 +239,7 @@ var orderData=[{
     'ensure_num':'8',
     'ticket_num':'Yu7894667',
     'cabin':'R',
-    'ticket_price':'$542.52',
+    'ticket_price':'￥542.52',
     'airline_taste':'￥50/0',
     'single_price':'￥591.52',
     'ticket_point':'3.3%',
@@ -162,7 +254,7 @@ var orderData=[{
     'ensure_num':'2',
     'ticket_num':'TR78915567',
     'cabin':'经济舱',
-    'ticket_price':'$1022.52',
+    'ticket_price':'￥1022.52',
     'airline_taste':'￥50/0',
     'single_price':'￥1201.52',
     'ticket_point':'5.3%',
@@ -177,7 +269,7 @@ var orderData=[{
     'ensure_num':'４',
     'ticket_num':'NG78915567',
     'cabin':'无座',
-    'ticket_price':'$200.62',
+    'ticket_price':'￥200.62',
     'airline_taste':'￥50/0',
     'single_price':'￥301.52',
     'ticket_point':'1.3%',

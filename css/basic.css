@@ -129,6 +129,49 @@ body{
      /*box-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);*/
 }
 
+.city{
+  position: fixed;
+  left: 500px;
+  top: 0px;
+  bottom: 0;
+  right: 0;
+  background-color: #eee;
+  z-index: 100;
+  opacity: 1;
+}
+
+.catalog{
+  width: 30px;
+  height: auto;
+  position: fixed;
+  z-index: 101;
+  right: -495px;
+  top:120px;
+}
+
+.catalog a{
+  display: inline-block;
+  width: 30px;
+ color: #000;
+ margin-top: 1px;
+  background-color: rgba(0,0,0,0); 
+  text-decoration: none;
+  text-align: center;
+  font-size: 10px;
+  padding: 0px;
+}
+
+.citylist{
+  position: fixed;
+  top: 113px;
+  left: 500px;
+  bottom: 0px;
+  right: 0px;
+  overflow-x: hidden;
+  overflow-y:auto; 
+}
+
+
 .search_list{
 	margin-top:44px;p
 }
@@ -245,19 +288,6 @@ span.price{
 	font-size: 14px;
 }
 
-/*.font_14 .item-text-wrap div.row:nth-child(1){
-	padding: 0px;
-}
-.font_14 .item-text-wrap div.row:nth-child(1) div.col:nth-child(1) p{
-	width: 105px !important;
-}
-
-.font_14 .item-text-wrap div.row:nth-child(1) div.col:nth-child(2) p{
-	width: 50px !important;
-}
-.font_14 .item-text-wrap div.row:nth-child(1) div.col:nth-child(3) p{
-	width: 105px !important;
-}  */
 .font_14 .item-divider{
 	position: relative;
 	font-weight:bold;
@@ -560,7 +590,80 @@ div.row_order_rules>div.col>div.row>div.col:nth-child(1){
 	border-right: solid 1px #aaa;
 }
 
+.ticketout_mask{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	background-color: rgba(0,0,0,.5);
+	z-index: 10;
+}
 
+.ticketout_mask div.row{
+	margin-top: 40%;
+}
+.ticketout_mask div.row div.col{
+	background-color: #fff;
+	border-radius: 5px;
+}
+.ticketout_mask div.row div.col p{
+	text-align: center;
+	margin-top: 20px;
+}
+
+.passenger_staff{
+	background-color: #eee;
+	position: fixed;
+	bottom: -200px;
+	left: 0px;
+	z-index: 20;
+	box-shadow: 0px -1px 8px rgba(0,0,0,.5);
+}
+
+span.item{
+	padding: 0!important;
+}
+span.item div.row div.col:nth-child(3){
+	padding-top: 28px;
+
+}
+
+.passenger-list{
+	margin-top: 55px;
+	margin-bottom: 0px;
+}
+.passenger-list label.item span.input-label{
+	width: 85px;
+	font-size: 14px !important;
+	color: #aaa;
+}
+.passenger-list label.item input{
+	border:solid 1px #ddd;
+	margin-right: 7px;
+	padding-left: 5px;
+}
+.passenger-list label.item a{
+	color: #000;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.padding>p.text-left{
+	color: #aaa;
+}
+.info_select{
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0,0,0,.5);
+	z-index: 30;
+}
+.info_select div.row div.col{
+	background-color: #fff;
+}
 
 
 
