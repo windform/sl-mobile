@@ -22,6 +22,7 @@ $(function () {
         $(this).addClass('active');
         $(".type_tabs").css('display', 'none');
         $(".type_tabs").eq($(this).index()).css('display', 'block');
+        $('.search').attr('id','search'+$(this).index());
     });
 
     //2、获取城市名
@@ -37,38 +38,77 @@ $(function () {
 
 	
 
-    $("#search").live('tap',function(){
+    $("#search0").live('tap',function(){
         window.location.href='search_list.html';
+    });
+    $("#search1").live('tap',function(){
+        window.location.href='search_list1.html';
+    });
+    $("#search2").live('tap',function(){
+        window.location.href='search_list2.html';
     });
 
     //3、城市交换
 	exchange();
 
-
+    //search_list.html search_list1.html
+    //1、模拟数据填充
 
     //airline_detail.html
-    var list='<div class="list">';
-    for(var i=0; i<data.length; i++){
-        list+='<div class="item"><div class="row">'
-            +'<div class="col col-80">'
-            +'<div class="detail_shell"><span class="cabin">'+data[i].cabin+'</span><span class="price">'+data[i].price+'</span></div>'
-            +'<div class="detail_shell"><span class="seat">座位数:'+data[i].seat+'</span><span class="ticket_point">返点:'+data[i].ticket_point+'</span><span class="ticket_price">票面价:'+data[i].ticket_price+'</span></div>'
-            +'</div>'
-            +'<div class="col col-20"><button class="button button-assertive fr advance">预定</button></div>'
-            +'</div></div>'
-    }
-    list+='</div>';
-    $(".search_list_detail").html(list);
-
-    $('.advance').live('tap',function(){
-         window.location.href='advance.html';
-    })
-
 
     //advance.html
+    //1、链接跳转
     $("#next").live('tap',function(){   
         window.location.href='policy.html';
     });
+    //2、单击页".btn-plus"，显示"选择常旅客"和"添加常旅客"
+    $('.btn-plus').on('tap',function(event){
+            event.stopPropagation();
+            passengerSelectAdd();
+    });
+    //3、单击页面除".btn-plus"的任意位置，移除".passenger_staff"
+    $(document).not('.btn-plus').on('tap',function(){
+        $('.passenger_staff').animate({bottom:-200}, 300,'ease-in');
+        setTimeout(function(){
+            $('.passenger_staff').remove();
+
+        },310)
+    })
+    //4、单击"选择常旅客"，进入"选择常旅客"界面
+    $(".passenger-select").live('tap',function(){
+        event.stopPropagation();
+        $('.city').remove();
+        normalPassenger();
+        setTimeout(function(){
+            $('.passenger_staff').remove();
+        },800)
+    })
+    //5、单击"添加常旅客"，进入"添加常旅客"界面
+    $(".passenger-add").live('tap',function(){
+        event.stopPropagation();
+        $('.passenger_mask').remove();
+        passengerAdd();
+
+        setTimeout(function(){
+            $('.passenger_staff').remove();
+        },800)
+    })
+    //5、删除乘客信息
+    $('.btn-remove').live('tap',function(){
+        $(this).parent().parent().remove();
+    })
+
+    //6、是否购买航空意外险JS选择
+    $('.airline_ensure').on('click',function(){
+        var status=$(this).find('input[type="checkbox"]').attr('checked');
+        if(status===true){
+            $('.airline_ensure_list').css('display','block');
+        }else{
+            $('.airline_ensure_list').css('display','none');   
+        }
+        //$('.airline_ensure_list').fadeToggle(300);
+    })    
+   
 
     //policy.html
     //1、政策选择数据渲染
@@ -231,6 +271,7 @@ $(function () {
 
 
 
+
 //订单详细虚假模拟数据
 var orderData=[{
     'name':'张三',
@@ -279,39 +320,6 @@ var orderData=[{
     'ticketout_time':'07:00-18:59'
 }]
 
-
-//预定舱位虚假模拟数据
-var data=[{
-    "price":"￥541.52",
-    "ticket_point":"3.3%",
-    "ticket_price":"￥560",
-    "seat":">9",
-    "cabin":"45折R舱"
-},{
-    "price":"￥571.52",
-    "ticket_point":"3.0%",
-    "ticket_price":"￥580",
-    "seat":">3",
-    "cabin":"45折R舱"
-},{
-    "price":"￥300.52",
-    "ticket_point":"1.2%",
-    "ticket_price":"￥800",
-    "seat":">5",
-    "cabin":"45折R舱"
-},{
-    "price":"￥1800.52",
-    "ticket_point":"5.0%",
-    "ticket_price":"￥800",
-    "seat":">6",
-    "cabin":"头等舱"
-},{
-    "price":"￥900.00",
-    "ticket_point":"4.2%",
-    "ticket_price":"￥1200",
-    "seat":">8",
-    "cabin":"78折C舱"
-}]
 
 
 //政策选择虚假模拟数据

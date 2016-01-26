@@ -261,7 +261,8 @@ span.price{
 }
 
 .bor_bot{
-	border-bottom:solid 1px #ddd;
+	/*border-bottom:solid 1px #ddd;*/
+	border-bottom: solid 2px #aaa;
 }
 
 .bor_bot1{
@@ -661,9 +662,133 @@ span.item div.row div.col:nth-child(3){
 	background-color: rgba(0,0,0,.5);
 	z-index: 30;
 }
+.info_select div.row{
+	margin-top: 20%;
+}
 .info_select div.row div.col{
 	background-color: #fff;
+	border-radius: 5px;
 }
+.info_select div.row div.col div.padding{
+	border-bottom: solid 1px #999;
+}
+.info_select div.row div.col div.padding strong{
+	position: relative;
+	font-size: 16px;
+	left: 0px;
+	top: 0px;
+}
+.credentials{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.credentials li{
+	height: 40px;
+	margin-top: 2px;
+	line-height: 40px;
+	border-bottom: solid 1px #eee;
+}
+.credentials li label{
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 25px;
+	font-size: 15px;
+}
+.credentials li label input[type="radio"]{
+	float: right;
+	margin-top: 6px;
+	margin-right: 25px;
+}
+.passenger_mask{
+	position: fixed;
+	top: 0px;
+	left: 800px;
+	bottom: 0px;
+	right: 0px;
+	background-color: #fff;
+	z-index: 40;
+}
+.airline_ensure_list{
+	opacity:1;
+}
+.order_search_list{
+	margin-top: 0px;
+}
+.order_search_list .card{
+	margin: 0px;
+	border:solid 1px #ddd;
+	border-top: solid 1px #fff;
+}
+.order_search_list .card a.item div.search_shell div.search_item:nth-child(1) span:not(.start_end){
+	float: right;
+	font-size: 14px;
+	color: #888;
+}
+
+.order_search_list .card a.item div.search_shell div.search_item:nth-child(2) span:not(.start_date){
+	float: right;
+}
+
+.order_search_list .card a.item div.search_shell div.search_item span.start_end,
+.order_search_list .card a.item div.search_shell div.search_item:nth-child(2) span{
+	font-size: 15px;
+	color: #111;
+	font-weight: bold;
+}
+
+.order_search_list .card a.item div.search_shell div.search_item:nth-child(1) span.logo{
+
+	position: relative;
+	width: 24px;
+	height: 24px;
+	top: 0px;
+	left: 0px;
+}
+
+span.logo>img{
+	width: 100%;
+}
+.order_search_list .card a.item{
+	padding: 4px;
+	padding-top: 10px;
+}
+
+.order_search_list div.card div.item{
+	padding: 4px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	min-height: 40px !important;
+}
+
+.order_search_list div.card div.item span{
+	color: #888;
+	font-size: 15px;
+}
+
+.order_search_list div.card div.item:last-child>span>img{
+	position: relative;
+	top: 2px;
+	padding-right:2px;
+}
+.order_search_list div.card div.item:last-child span{
+	position: relative;
+}
+.order_search_list div.card div.item>span:last-child{
+	float: right;
+}
+.blue_font{
+	color:#00a0e9!important;
+	font-weight: bold;
+	font-size: 16px;
+}
+.red_font{
+	color:#e02222 !important;
+	font-weight: bold;
+	font-size: 16px;
+}
+
 
 
 
