@@ -283,9 +283,205 @@ function infoSelect(cla,tit,arr){
     })
 }
 
+function orderList(){
+    var orderlist_box='<div class="list">';
+    for(var i=0; i<orderlistdata.length; i++){
+        orderlist_box+='<div class="list card">'
+                    +'<div class="item item-avatar">'
+                        +'<span>订单时间：'+orderlistdata[i].order_time+'</span>'
+                        +'<span class="blue_font">'+orderlistdata[i].order_type+'</span>'
+                    +'</div>'
+                    for(var j=0;j<orderlistdata[i].order_detail.length;j++){
+                    orderlist_box+='<a class="item" href="order_detail'+i+'.html">'
+                        +'<div class="search_shell">'
+                            +'<div class="search_item">'
+                                +'<span class="start_end">'+orderlistdata[i].order_detail[j].start_end+'</span>'
+                                +'<span class="food">'+orderlistdata[i].order_detail[j].food+'</span>'
+                                +'<span class="stop">'+orderlistdata[i].order_detail[j].stop+'</span>'
+                                +'<span class="air_type">'+orderlistdata[i].order_detail[j].air_type+'</span>'
+                                +'<span class="company">'+orderlistdata[i].order_detail[j].company+'</span>'
+                                +'<span class="logo">'
+                                    +'<img src="'+orderlistdata[i].order_detail[j].logo+'" alt="航空公司logo">'
+                                +'</span>'
+                            +'</div>'
+                            +'<div class="search_item">'
+                                +'<span class="start_date">'+orderlistdata[i].order_detail[j].start_date+'</span>'
+                                +'<span class="section_time">'+orderlistdata[i].order_detail[j].section_time+'</span>'
+                            +'</div>'
+                        +'</div>'
+                    +'</a>'
+                    }
+                    orderlist_box+='<div class="item  item-avatar">'
+                        +'<span><img src="images/person.jpg" alt="人物icon">'+orderlistdata[i].order_person+'</span>'
+                        +'<span>票面价:<span class="red_font">'+orderlistdata[i].ticket_price+'</span></span>'
+                    +'</div>'
+                +'</div>'
+    }
+    orderlist_box+='</div>';
+    $('.order_search_list').html(orderlist_box);
+
+}
+
+function ensureorderList(){
+    var orderlist_box='<div class="list">';
+    for(var i=0; i<ensureorderlistdata.length; i++){
+        orderlist_box+='<div class="list card">'
+                    +'<div class="item item-avatar">'
+                        +'<span>订单时间：'+ensureorderlistdata[i].order_time+'</span>'
+                        +'<span class="blue_font">'+ensureorderlistdata[i].order_type+'</span>'
+                    +'</div>'
+                    +'<a class="item" href="ensure_orderdetail'+i+'.html">'
+                        +'<div class="search_shell">'
+                            +'<div class="search_item">'
+                                +'<span class="start_end">'+ensureorderlistdata[i].ensure_name+'</span>'
+                                +'<span class="start_end ensure_time">'+ensureorderlistdata[i].ensure_time+'</span>'
+                                +'<span class="food">最高保额：'+ensureorderlistdata[i].ensure_amount+'</span>'
+                            +'</div>'
+                        +'</div>'
+                    +'</a>'
+                    +'<div class="item  item-avatar">'
+                        +'<span><img src="images/person.jpg" alt="人物icon">'+ensureorderlistdata[i].order_person+'</span>'
+                        +'<span>票面价:<span class="red_font">'+ensureorderlistdata[i].ticket_price+'</span></span>'
+                    +'</div>'
+                +'</div>'
+    }
+    orderlist_box+='</div>';
+    $('.ensure_search_list').html(orderlist_box);
+
+}
+
+//保险订单列表虚假模拟数据
+var ensureorderlistdata=[{
+    "order_time":"2016-01-10 13:32",
+    "order_type":"新订单",
+    "ensure_name":"阳光人寿航空意外险",
+    "ensure_time":"7天",
+    "ensure_amount":"80万",
+    "order_person":"沈佳宜等两人",
+    "ticket_price":"￥4520"
+},{
+    "order_time":"2016-01-19 15:32",
+    "order_type":"投保成功",
+    "ensure_name":"阳光人寿航空意外险",
+    "ensure_time":"7天",
+    "ensure_amount":"80万",
+    "order_person":"沈梦辰",
+    "ticket_price":"￥4520"
+},{
+    "order_time":"2016-01-25 18:32",
+    "order_type":"已取消",
+    "ensure_name":"阳光人寿航空意外险",
+    "ensure_time":"7天",
+    "ensure_amount":"80万",
+    "order_person":"沈浪",
+    "ticket_price":"￥4520"
+}]
 
 
-
+//机票订单列表虚假模拟数据
+var orderlistdata=[{
+    "order_time":"2016-01-10 13:32",
+    "order_type":"新订单",
+    "order_detail":[{
+        "start_end":"北京→上海",
+        "food":"有餐食",
+        "stop":"不经停",
+        "air_type":"321",
+        "company":"吉祥HO1252",
+        "logo":"images/company_logo.jpg",
+        "start_date":"2016-01-12 周二",
+        "section_time":"06:35-08:45"
+    },{
+        "start_end":"上海→北京",
+        "food":"有餐食",
+        "stop":"不经停",
+        "air_type":"321",
+        "company":"吉祥HO1252",
+        "logo":"images/company_logo.jpg",
+        "start_date":"2016-01-18 周一",
+        "section_time":"06:35-08:45"
+    }],
+    "order_person":"沈佳宜等两人",
+    "ticket_price":"￥4520"
+},{
+    "order_time":"2016-01-19 13:32",
+    "order_type":"已支付",
+    "order_detail":[{
+        "start_end":"上海→广州",
+        "food":"有餐食",
+        "stop":"不经停",
+        "air_type":"321",
+        "company":"东航HO1252",
+        "logo":"images/company_logo.jpg",
+        "start_date":"2016-01-20 周二",
+        "section_time":"06:35-08:45"
+    },{
+        "start_end":"广州→上海",
+        "food":"有餐食",
+        "stop":"不经停",
+        "air_type":"321",
+        "company":"东航HO1252",
+        "logo":"images/company_logo.jpg",
+        "start_date":"2016-01-25 周一",
+        "section_time":"06:35-08:45"
+    }],
+    "order_person":"盖聂等两人",
+    "ticket_price":"￥4520"
+},{
+    "order_time":"2016-01-15 14:32",
+    "order_type":"已出票",
+    "order_detail":[{
+        "start_end":"北京→武汉",
+        "food":"无餐食",
+        "stop":"经停",
+        "air_type":"311",
+        "company":"南航HO1252",
+        "logo":"images/company_logo.jpg",
+        "start_date":"2016-01-16 周三",
+        "section_time":"09:35-21:45"
+    }],
+    "order_person":"汤唯",
+    "ticket_price":"￥1320"
+},{
+    "order_time":"2016-01-20 20:32",
+    "order_type":"已退改签取消",
+    "order_detail":[{
+        "start_end":"北京→广州",
+        "food":"有餐食",
+        "stop":"不经停",
+        "air_type":"320",
+        "company":"国航HO1252",
+        "logo":"images/company_logo.jpg",
+        "start_date":"2016-02-03 周五",
+        "section_time":"06:35-10:45"
+    }],
+    "order_person":"古天乐",
+    "ticket_price":"￥2220"
+},{
+    "order_time":"2016-01-10 13:32",
+    "order_type":"已拒票",
+    "order_detail":[{
+        "start_end":"北京→成都",
+        "food":"有餐食",
+        "stop":"不经停",
+        "air_type":"321",
+        "company":"吉祥HO1252",
+        "logo":"images/company_logo.jpg",
+        "start_date":"2016-01-12 周二",
+        "section_time":"06:35-08:45"
+    },{
+        "start_end":"成都→乌鲁木齐",
+        "food":"有餐食",
+        "stop":"不经停",
+        "air_type":"321",
+        "company":"吉祥HO1252",
+        "logo":"images/company_logo.jpg",
+        "start_date":"2016-01-18 周一",
+        "section_time":"06:35-08:45"
+    }],
+    "order_person":"柯震东等两人",
+    "ticket_price":"￥5020"
+}]
 
 
 

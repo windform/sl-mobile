@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="css/ionic.css">
+	<link rel="stylesheet" href="css/ionicons.css">
+	<link rel="stylesheet" href="css/DateTimePicker.css">
+	<link rel="stylesheet" type="text/css" href="css/mobile-select-area.css">
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+    <script src="js/zepto.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/basic.js"></script>
+    <script src="js/effects.js"></script>
+    <!--<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>-->
+    <script src="js/fx_methods.js"></script>
+	<!-- <script src="js/DateTimePicker-Zepto.js"></script> -->
+	<script src="js/dialog.js"></script>
+	<script src="js/mobile-select-area.js"></script>
+</head>
+<body>
+	<div class="frame_header1">
+		<div class="bar bar-header bar-dark">
+		<a class="button icon-left ion-ios-arrow-back button-clear button-light" onClick="window.history.back()"></a>
+		<h1 class="title">订单详细</h1>
+		 <a class="button icon-right button-clear button-light" href="#">取消订单</a>
+		</div> 
+	</div>
+	<div class="frame_content1">
+
+
+	<!-- 订单信息 -->
+	<div class="card font_14">
+	  <div class="item item-divider">
+		订单信息
+	  </div>
+	  <div class="item item-text-wrap">
+	  	<div class="row">
+	  		<div class="col col-25">
+	  			<p>支付总价</p>
+	  			<p>订单状态</p>
+	  			<p>订单编号</p>
+	  			<p>订单时间</p>
+	  		</div>
+	  		<div class="col col-75">
+	  			<p>￥1151.52</p>
+	  			<p>已出票</p>
+	  			<p>2015110810507118</p>
+	  			<p>2015-11-08 10:50:22</p>
+	  		</div>
+	  	</div>
+	  </div>
+	</div>
+
+
+	<!-- 航程信息 -->
+	<div class="card font_14">
+	  <div class="item item-divider">
+		航程信息
+	  </div>
+	  <div class="item item-text-wrap" style="padding-left:0px; padding-right:0px">
+	  	<div class="air_rang_list">
+	  		<div class="row">
+				<div class="col text_right">
+					<p>2016-01-12</p>
+					<p>周二 06:35</p>
+					<p>北京T3</p>
+				</div>
+				<div class="col text_center">
+					<p class="tast_time">2h10m</p>
+				</div>
+				<div class="col">
+					<p>2016-01-12</p>
+					<p>周二 08:45</p>
+					<p>上海虹桥T2</p>
+				</div>
+			</div>
+			<div class="row bor_bot" style="padding:0px">
+				<div class="col text_center" style="padding-left:0px; padding-right:0px">
+					<span>logo</span>
+					<span>吉祥HO1252</span>
+					<span>321</span>
+					<span>不经停</span>
+					<span>无餐食</span>
+					<span>R舱</span>
+				</div>
+			</div>
+	  	</div>
+ 		<div class="row">
+			<div class="col text_center">
+				<!-- <a class="button ion-chevron-down order_toggle_btn order_down"></a> -->
+				<a class="button button-small icon-right ion-arrow-down-b order_read_btn">退改签规定及政策说明</a>
+			</div>
+		</div> 
+		<div class="row row_order_rules">
+			<div class="col">
+				<div class="row">
+					<div class="col col-25">退改签规定</div>
+					<div class="col col-75">起飞前2小时（不含）之前退票收取Y舱公布运价30%退票费.起飞前2小时以内及航班起飞后收取Y舱公布运价35%退票费；起飞前2小时（不含）之前收取Y舱公布运价10%变更费.起飞前2小时以内及航班起飞后收取Y舱公布运价15%变更费；</div>
+				</div>
+				<div class="row">
+					<div class="col col-25">政策说明</div>
+					<div class="col col-75">备注：改签即收回代理费</div>
+				</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- 机票信息 -->
+	<div class="card font_14">
+	  <div class="item item-divider">
+		机票信息
+	  </div>
+	  <div class="item item-text-wrap order_detail_wrap">
+
+		<!-- <div class="order_detail_list">
+		   	<div class="row bor_bot3">
+		   		<div class="col col-25">
+		   			<p>某某</p>
+		   			<p>身份证号</p>
+		   			<p>保险数量</p>
+		   			<p>票号</p>
+		   		</div>
+		   		<div class="col col-75">
+		   			<p>成人</p>
+		   			<p>610112198306184529</p>
+		   			<p>0</p>
+		   			<p>826-2368632975</p>
+		   		</div>
+		   	</div>
+		 	<div class="row row_detail">
+		 		<div class="col"><span>舱位:</span></div>
+		 		<div class="col"><span>R</span></div>
+		 		<div class="col"><span>票面结算价:</span></div>
+		 		<div class="col"><span class="red_color">￥542.52</span></div>
+		 	</div>
+		 	<div class="row row_detail">
+		 		<div class="col"><span>机建/燃油:</span></div>
+		 		<div class="col"><span>￥50/0</span></div>
+		 		<div class="col"><span>单张票价:</span></div>
+		 		<div class="col"><span class="red_color">￥591.52</span></div>
+		 	</div>
+		 	<div class="order_toggle">
+		 		<div class="row row_detail">
+		 			<div class="col"><span>返点:</span></div>
+		 			<div class="col"><span>3.3%</span></div>
+		 			<div class="col"><span>单张代理费:</span></div>
+		 			<div class="col"><span class="red_color">￥18.48</span></div>
+		 		</div>
+		 		<div class="row row_detail">
+		 			<div class="col"><span>机票推荐:</span></div>
+		 			<div class="col"><span class="policy_type">标准政策</span></div>
+		 			<div class="col"><span>政策类型:</span></div>
+		 			<div class="col"><span style="width:80px">B2B,PSB</span></div>
+		 
+		 		</div>
+		 		<div class="row row_detail">
+		 			<div class="col"><span>出票时间:</span></div>
+		 			<div class="col"><span style="width:100px">00:00-23:59</span></div>	
+		 			<div class="col"></div>
+		 			<div class="col"></div>
+		 		</div>
+		 		<a class="button ion-chevron-down order_toggle_btn order_down"></a>
+		 		<a class="button ion-chevron-up order_toggle_btn order_up"></a>
+		 	</div>
+		 </div> --> 
+
+
+
+
+	  </div>
+	</div>
+
+	<!-- 联系人信息 -->
+	<div class="card font_14">
+	  <div class="item item-divider">
+		联系人信息
+	  </div>
+	  <div class="item item-text-wrap">
+	  	<div class="row">
+	  		<div class="col col-25">
+	  			<p>联系人</p>
+	  			<p>手机</p>
+	  		</div>
+	  		<div class="col col-75">
+	  			<p>某某</p>
+	  			<p>13352046789</p>
+	  		</div>
+	  	</div>
+	  </div>
+	</div>
+
+<div class="padding">
+	<button class="button button-block button-dark btn-ticketout">申请退改签</button>
+</div>
+
+</div>
+
+<script>
+	$(function(){
+		var plane_order_info='<div class="card font_14">'
+							  +'<div class="item item-divider">订单信息'
+							  +'</div>'
+							  +'<div class="item item-text-wrap">'
+							  	+'<div class="row">'
+							  		+'<div class="col col-25">'
+							  			+'<p>支付总价</p>'
+							  			+'<p>订单状态</p>'
+							  			+'<p>订单编号</p>'
+							  			+'<p>订单时间</p>'
+							  		+'</div>'
+							  		+'<div class="col col-75">'
+							  			+'<p>'+plane_order_info_data.total_price+'</p>'
+							  			+'<p>'+plane_order_info_data.order_status+'</p>'
+							  			+'<p>'+plane_order_info_data.order_num+'</p>'
+							  			+'<p>'+plane_order_info_data.order_time+'</p>'
+							  		+'</div>'
+							  	+'</div>'
+							  +'</div>'
+							+'</div>'
+
+		var air_rang_info='<div class="card font_14">'
+						  +'<div class="item item-divider">航程信息'
+						  +'</div>'
+						  +'<div class="item item-text-wrap" style="padding-left:0px; padding-right:0px">'
+						  for(var i=0;i<air_rang_info_data.length;i++){
+						  	air_rang_info+='<div class="air_rang_list">'
+						  		+'<div class="row">'
+									+'<div class="col text_right">'
+										+'<p>'+air_rang_info_data[i].start_date+'</p>'
+										+'<p>'+air_rang_info_data[i].start_time+'</p>'
+										+'<p>'+air_rang_info_data[i].start_airport+'</p>'
+									+'</div>'
+									+'<div class="col text_center">'
+										+'<p class="tast_time">'+air_rang_info_data[i].fly_time+'</p>'
+									+'</div>'
+									+'<div class="col">'
+										+'<p>'+air_rang_info_data[i].end_date+'</p>'
+										+'<p>'+air_rang_info_data[i].end_time+'</p>'
+										+'<p>'+air_rang_info_data[i].end_airport+'</p>'
+									+'</div>'
+								+'</div>'
+								+'<div class="row bor_bot" style="padding:0px">'
+									+'<div class="col text_center" style="padding-left:0px; padding-right:0px">'
+										+'<span>logo</span>'
+										+'<span>'+air_rang_info_data[i].company+'</span>'
+										+'<span>'+air_rang_info_data[i].type+'</span>'
+										+'<span>'+air_rang_info_data[i].stop+'</span>'
+										+'<span>'+air_rang_info_data[i].food+'</span>'
+										+'<span>'+air_rang_info_data[i].cabin+'</span>'
+									+'</div>'
+								+'</div>'
+						  	+'</div>'
+						  }
+						  	
+					 	air_rang_info+='<div class="row">'
+								+'<div class="col text_center">'
+									+'<a class="button button-small icon-right ion-arrow-down-b order_read_btn">退改签规定及政策说明</a>'
+								+'</div>'
+							+'</div>' 
+							+'<div class="row row_order_rules">'
+								+'<div class="col">'
+									+'<div class="row">'
+										+'<div class="col col-25">退改签规定</div>'
+										+'<div class="col col-75">'+policy.policy_detail+'</div>'
+									+'</div>'
+									+'<div class="row">'
+										+'<div class="col col-25">政策说明</div>'
+										+'<div class="col col-75">'+policy.policy_mark+'</div>'
+									+'</div>'
+								+'</div>'
+							+'</div>'
+						  +'</div>'
+						+'</div>'
+
+		var plane_ticket_info='<div class="card font_14">'
+							  +'<div class="item item-divider">机票信息</div>'
+							  +'<div class="item item-text-wrap order_detail_wrap">'
+			    for(var i=0;i<plane_ticket_info_data.length;i++){
+			        plane_ticket_info+='<div class="order_detail_list">'
+			                +'<div class="row bor_bot3">'
+			                +'<div class="col col-25">'
+			                +'<p>'+plane_ticket_info_data[i].name+'</p>'
+			                +'<p>身份证号</p>'
+			                +'<p>保险数量</p>'
+			                +'<p>票号</p>'
+			                +'</div>'
+			                +'<div class="col col-75">'
+			                +'<p>'+plane_ticket_info_data[i].person_type+'</p>'
+			                +'<p>'+plane_ticket_info_data[i].person_num+'</p>'
+			                +'<p>'+plane_ticket_info_data[i].ensure_num+'</p>'
+			                +'<p>'+plane_ticket_info_data[i].ticket_num+'</p>'
+			                +'</div>'
+			                +'</div>'
+			            +'<div class="row row_detail">'
+			                +'<div class="col"><span>舱位:</span></div>'
+			                +'<div class="col"><span>'+plane_ticket_info_data[i].cabin+'</span></div>'
+			                +'<div class="col"><span>票面结算价:</span></div>'
+			                +'<div class="col"><span class="red_color">'+plane_ticket_info_data[i].ticket_price+'</span></div>'
+			            +'</div>'
+			            +'<div class="row row_detail">'
+			                +'<div class="col"><span>机建/燃油:</span></div>'
+			                +'<div class="col"><span>'+plane_ticket_info_data[i].airline_taste+'</span></div>'
+			                +'<div class="col"><span>单张票价:</span></div>'
+			                +'<div class="col"><span class="red_color">'+plane_ticket_info_data[i].single_price+'</span></div>'
+			            +'</div>'
+			            +'<div class="order_toggle">'
+			                +'<div class="row row_detail">'
+			                    +'<div class="col"><span>返点:</span></div>'
+			                    +'<div class="col"><span>'+plane_ticket_info_data[i].ticket_point+'</span></div>'
+			                    +'<div class="col"><span>单张代理费:</span></div>'
+			                    +'<div class="col"><span class="red_color">'+plane_ticket_info_data[i].agent_price+'</span></div>'
+			                +'</div>'
+			                +'<div class="row row_detail">'
+			                    +'<div class="col"><span>机票推荐:</span></div>'
+			                    +'<div class="col"><span class="policy_type">'+plane_ticket_info_data[i].ticketout_recommend+'</span></div>'
+			                    +'<div class="col"><span>政策类型:</span></div>'
+			                    +'<div class="col"><span style="width:80px">'+plane_ticket_info_data[i].policy_type+'</span></div>'
+			        
+			                +'</div>'
+			                +'<div class="row row_detail">'
+			                    +'<div class="col"><span>出票时间:</span></div>'
+			                    +'<div class="col"><span style="width:100px">'+plane_ticket_info_data[i].ticketout_time+'</span></div> '
+			                    +'<div class="col"></div>'
+			                    +'<div class="col"></div>'
+			                +'</div>'
+			                +'<a class="button ion-chevron-down order_toggle_btn order_down"></a>'
+			                +'<a class="button ion-chevron-up order_toggle_btn order_up"></a>'
+			            +'</div>'
+			        +'</div> '
+			    }
+
+			var plane_connect_info='<div class="card font_14">'
+								  +'<div class="item item-divider">联系人信息</div>'
+								  +'<div class="item item-text-wrap">'
+								  	+'<div class="row">'
+								  		+'<div class="col col-25">'
+								  			+'<p>联系人</p>'
+								  			+'<p>手机</p>'
+								  		+'</div>'
+								  		+'<div class="col col-75">'
+								  			+'<p>'+plane_connect_info_data.name+'</p>'
+								  			+'<p>'+plane_connect_info_data.phone+'</p>'
+								  		+'</div>'
+								  	+'</div>'
+								  +'</div>'
+								+'</div>'
+			var plane_pay_info='<div class="row order_birth">'
+					+'<div class="col">'
+						+'<p>支付价格</p>'
+						+'<p>'+plane_pay_info_data.pay_price+'</p>'
+					+'</div>'
+					+'<div class="col">'
+						+'<p>总利润</p>'
+						+'<p>'+plane_pay_info_data.total_profit+'</p>'
+					+'</div>'
+					+'<div class="col">'
+						+'<p>保险费用</p>'
+						+'<p>'+plane_pay_info_data.ensure_price+'</p>'
+					+'</div>'
+					+'<div class="col">'
+						+'<button class="button button-assertive">支付</button>'
+					+'</div>'
+				+'</div>'
+
+
+			var plane_ticketout_info='<div class="padding">'
+										+'<button class="button button-block button-dark btn-ticketout">申请退改签</button>'
+									+'</div>'
+
+
+			plane_ticket_info+='</div></div>'
+
+		//$(".frame_content1").html(plane_order_info);
+		$(".frame_content1").html(plane_order_info+air_rang_info+plane_ticket_info+plane_connect_info+plane_pay_info);
+
+		$('.order_read_btn').click(function(){
+		        $('.row_order_rules').fadeToggle(300);
+		        $(this).toggleClass('ion-arrow-up-b');
+		    })
+
+	})
+
+
+	var plane_order_info_data={
+		"total_price":"￥4520",
+		"order_status":"新订单",
+		"order_num":"2015110810507118",
+		"order_time":"2015-11-08 10:50:22"
+	}
+	var air_rang_info_data=[{
+		"start_date":"2016-01-12",
+		"start_time":"周二 06:35",
+		"start_airport":"北京T3",
+		"fly_time":"2h10m",
+		"end_date":"2016-01-12",
+		"end_time":"周二 08:35",
+		"end_airport":"上海虹桥T2",
+		"company_logo":"logo",
+		"company":"吉祥HO1252",
+		"type":"321",
+		"stop":"不经停",
+		"food":"有餐食",
+		"cabin":"R舱"
+	},{
+		"start_date":"2016-01-18",
+		"start_time":"周一 06:35",
+		"start_airport":"上海虹桥",
+		"fly_time":"2h10m",
+		"end_date":"2016-01-18",
+		"end_time":"周一 08:35",
+		"end_airport":"北京T2",
+		"company_logo":"logo",
+		"company":"吉祥HO1252",
+		"type":"321",
+		"stop":"不经停",
+		"food":"有餐食",
+		"cabin":"R舱"
+	}]
+
+var policy={
+	"policy_detail":"起飞前2小时（不含）之前退票收取Y舱公布运价30%退票费.起飞前2小时以内及航班起飞后收取Y舱公布运价35%退票费；起飞前2小时（不含）之前收取Y舱公布运价10%变更费.起飞前2小时以内及航班起飞后收取Y舱公布运价15%变更费；",
+	"policy_mark":"备注：改签即收回代理费"
+}
+
+var plane_ticket_info_data=[{
+    'name':'沈佳宜',
+    'person_num':'36078216457828',
+    'person_type':'成人',
+    'ensure_num':'8',
+    'ticket_num':'Yu7894667',
+    'cabin':'R',
+    'ticket_price':'￥3542.52',
+    'airline_taste':'￥50/0',
+    'single_price':'￥3591.52',
+    'ticket_point':'3.3%',
+    'agent_price':'￥18.48',
+    'ticketout_recommend':'标准政策',
+    'policy_type':'B2B,PSB',
+    'ticketout_time':'00:00-23:59'
+},{
+    'name':'沈晓明',
+    'person_num':'JHFB87654674',
+    'person_type':'儿童',
+    'ensure_num':'４',
+    'ticket_num':'NG78915567',
+    'cabin':'无座',
+    'ticket_price':'￥977.48',
+    'airline_taste':'￥50/0',
+    'single_price':'￥980.48',
+    'ticket_point':'1.3%',
+    'agent_price':'￥19.48',
+    'ticketout_recommend':'标准政策',
+    'policy_type':'B2B,B2G',
+    'ticketout_time':'07:00-18:59'
+}]
+
+var plane_connect_info_data={
+	"name":"沈佳宜",
+	"phone":"15620780149"
+}
+
+var plane_pay_info_data={
+	"pay_price":"￥4520",
+	"total_profit":"￥50.00",
+	"ensure_price":"￥10.00"
+
+}
+</script>
+
+</body>
+</html>

@@ -262,6 +262,15 @@ $(function () {
     })
 
 
+    //plane_orderlist.html
+    //1、模拟数据填充
+    orderList()
+
+    //ensure_orderlist.html
+    //1、模拟数据填充
+    ensureorderList()
+
+
 });
 
 

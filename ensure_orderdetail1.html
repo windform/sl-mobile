@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="css/ionic.css">
+	<link rel="stylesheet" href="css/ionicons.css">
+	<link rel="stylesheet" href="css/DateTimePicker.css">
+	<link rel="stylesheet" type="text/css" href="css/mobile-select-area.css">
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+    <script src="js/zepto.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/basic.js"></script>
+    <script src="js/effects.js"></script>
+    <!--<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>-->
+    <script src="js/fx_methods.js"></script>
+	<script src="js/DateTimePicker-Zepto.js"></script>
+	<script src="js/dialog.js"></script>
+	<script src="js/mobile-select-area.js"></script>
+</head>
+<body>
+	<div class="frame_header1">
+		<div class="bar bar-header bar-dark">
+		<a class="button icon-left ion-ios-arrow-back button-clear button-light" onClick="window.history.back()"></a>
+		<h1 class="title">订单详细</h1>
+		<a class="button icon-right button-clear button-light"></a></div>
+	</div>
+	<div class="frame_content1">
+		<div class="ensuredetail_search_list">
+			<div class="list">
+				<!-- <div class="list card">
+                    <div class="item item-avatar">
+                        <span class="ensure_detail_tit">订单信息</span>
+                    </div>
+                    <div class="item item-avatar item_second">
+                    	<div class="row">
+                    		<div class="col col-33">支付总价</div>
+                    		<div class="col red_font">sadjhkaj</div>
+                    	</div>
+                    	<div class="row">
+                    		<div class="col col-33">订单状态</div>
+                    		<div class="col blue_font">sadjhkaj</div>
+                    	</div>
+                    	<div class="row">
+                    		<div class="col col-33">订单编号</div>
+                    		<div class="col">sadjhkaj</div>
+                    	</div>
+                    	<div class="row">
+                    		<div class="col col-33">订单时间</div>
+                    		<div class="col">sadjhkaj</div>
+                    	</div>
+                    	<div class="row">
+                    		<div class="col col-33">支付方式</div>
+                    		<div class="col">sadjhkaj</div>
+                    	</div>
+                    </div>
+                </div>
+ -->
+				<!-- <div class="list card">
+                    <div class="item item-avatar">
+                        <span class="ensure_detail_tit">产品信息</span>
+                    </div>
+                    <div class="item item-avatar item_second">
+                    	<div class="row">
+                    		<div class="col col-33">保险产品名称</div>
+                    		<div class="col red_font">sadjhkaj</div>
+                    	</div>
+                    	<div class="row">
+                    		<div class="col col-33">保险公司名称</div>
+                    		<div class="col blue_font">sadjhkaj</div>
+                    	</div>
+                    	<div class="row">
+                    		<div class="col col-33">险种类型</div>
+                    		<div class="col">sadjhkaj</div>
+                    	</div>
+                    	<div class="row">
+                    		<div class="col col-33">保险期限</div>
+                    		<div class="col">sadjhkaj</div>
+                    	</div>
+                    	<div class="row">
+                    		<div class="col col-33">最高保额</div>
+                    		<div class="col">sadjhkaj</div>
+                    	</div>
+                    	<div class="row">
+                    		<div class="col col-33">票面价</div>
+                    		<div class="col">sadjhkaj</div>
+                    	</div>
+                    	<div class="row">
+                    		<div class="col col-33">保险费用</div>
+                    		<div class="col">sadjhkaj</div>
+                    	</div>
+                    </div>
+                </div> -->
+
+                <!-- <div class="list card">
+                    <div class="item item-avatar">
+                        <span class="ensure_detail_tit">保单信息</span>
+                    </div>
+	                <div class="item item-avatar item_second">
+	                    <div class="ensure_infolist">
+	                    	<div class="row">
+	                    		<div class="col col-33">姓名</div>
+	                    		<div class="col red_font">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">性别</div>
+	                    		<div class="col blue_font">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">证件类型</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">证件号码</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">出生日期</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">手机号码</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">保单号</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">生效日期</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">保单数量</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    </div>
+	                    <div class="ensure_infolist">
+	                    	<div class="row">
+	                    		<div class="col col-33">姓名</div>
+	                    		<div class="col red_font">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">性别</div>
+	                    		<div class="col blue_font">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">证件类型</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">证件号码</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">出生日期</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">手机号码</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">保单号</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">生效日期</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col col-33">保单数量</div>
+	                    		<div class="col">sadjhkaj</div>
+	                    	</div>
+	                    </div>
+                    </div>
+                </div> -->
+
+                <!-- <div class="list card">
+                    <div class="item item-avatar">
+                        <span class="ensure_detail_tit">受益人</span>
+                    </div>
+                    <div class="item item-avatar item_second">
+                    	<div class="row">
+                    		<div class="col">法定</div>
+                    	</div>
+                    </div>
+                </div> -->
+
+                <!-- <div class="row order_birth">
+					<div class="col">
+						<p>支付价格</p>
+						<p>￥11.00</p>
+					</div>
+					<div class="col">
+						<p>保险数量</p>
+						<p>2</p>
+					</div>
+					<div class="col">
+						<p>保险费用</p>
+						<p>￥5.50</p>
+					</div>
+					<div class="col">
+						<button class="button button-assertive">支付</button>
+					</div>
+				</div> -->
+
+			</div>	
+		</div>
+	</div>
+
+<script>
+	$(function(){
+		var order_info='<div class="list card">'
+                    +'<div class="item item-avatar">'
+                        +'<span class="ensure_detail_tit">订单信息</span>'
+                    +'</div>'
+                    +'<div class="item item-avatar item_second">'
+                    	+'<div class="row">'
+                    		+'<div class="col col-33">支付总价</div>'
+                    		+'<div class="col red_font">'+order_info_data.total_price+'</div>'
+                    	+'</div>'
+                    	+'<div class="row">'
+                    		+'<div class="col col-33">订单状态</div>'
+                    		+'<div class="col blue_font">'+order_info_data.order_type+'</div>'
+                    	+'</div>'
+                    	+'<div class="row">'
+                    		+'<div class="col col-33">订单编号</div>'
+                    		+'<div class="col">'+order_info_data.order_num+'</div>'
+                    	+'</div>'
+                    	+'<div class="row">'
+                    		+'<div class="col col-33">订单时间</div>'
+                    		+'<div class="col">'+order_info_data.order_time+'</div>'
+                    	+'</div>'
+                    	+'<div class="row">'
+                    		+'<div class="col col-33">支付方式</div>'
+                    		+'<div class="col">'+order_info_data.pay_method+'</div>'
+                    	+'</div>'
+                    +'</div>'
+                +'</div>'
+
+        var product_info='<div class="list card">'
+                    +'<div class="item item-avatar">'
+                        +'<span class="ensure_detail_tit">产品信息</span>'
+                    +'</div>'
+                    +'<div class="item item-avatar item_second">'
+                    	+'<div class="row">'
+                    		+'<div class="col col-33">保险产品名称</div>'
+                    		+'<div class="col">'+product_info_data.ensure_name+'</div>'
+                    	+'</div>'
+                    	+'<div class="row">'
+                    		+'<div class="col col-33">保险公司名称</div>'
+                    		+'<div class="col">'+product_info_data.ensure_company+'</div>'
+                    	+'</div>'
+                    	+'<div class="row">'
+                    		+'<div class="col col-33">险种类型</div>'
+                    		+'<div class="col">'+product_info_data.ensure_type+'</div>'
+                    	+'</div>'
+                    	+'<div class="row">'
+                    		+'<div class="col col-33">保险期限</div>'
+                    		+'<div class="col">'+product_info_data.ensure_time+'</div>'
+                    	+'</div>'
+                    	+'<div class="row">'
+                    		+'<div class="col col-33">最高保额</div>'
+                    		+'<div class="col">'+product_info_data.ensure_amount+'</div>'
+                    	+'</div>'
+                    	+'<div class="row">'
+                    		+'<div class="col col-33">票面价</div>'
+                    		+'<div class="col">'+product_info_data.ensure_price+'</div>'
+                    	+'</div>'
+                    	+'<div class="row">'
+                    		+'<div class="col col-33">保险费用</div>'
+                    		+'<div class="col">'+product_info_data.ensure_taste+'</div>'
+                    	+'</div>'
+                    +'</div>'
+                +'</div>'
+
+        var benefit_info='<div class="list card">'
+                    +'<div class="item item-avatar">'
+                        +'<span class="ensure_detail_tit">受益人</span>'
+                    +'</div>'
+                    +'<div class="item item-avatar item_second">'
+                    	+'<div class="row">'
+                    		+'<div class="col">'+benefit_info_data[0]+'</div>'
+                    	+'</div>'
+                    +'</div>'
+                +'</div>'
+
+        var ensureform_info='<div class="list card">'
+                    +'<div class="item item-avatar">'
+                        +'<span class="ensure_detail_tit">保单信息</span>'
+                    +'</div>'
+	                +'<div class="item item-avatar item_second">'
+	        for(var i=0; i<ensureform_info_data.length; i++){
+	        	ensureform_info+='<div class="ensure_infolist">'
+	                    	+'<div class="row">'
+	                    		+'<div class="col col-33">姓名</div>'
+	                    		+'<div class="col">'+ensureform_info_data[i].name+'</div>'
+	                    	+'</div>'
+	                    	+'<div class="row">'
+	                    		+'<div class="col col-33">性别</div>'
+	                    		+'<div class="col">'+ensureform_info_data[i].sex+'</div>'
+	                    	+'</div>'
+	                    	+'<div class="row">'
+	                    		+'<div class="col col-33">证件类型</div>'
+	                    		+'<div class="col">'+ensureform_info_data[i].card_type+'</div>'
+	                    	+'</div>'
+	                    	+'<div class="row">'
+	                    		+'<div class="col col-33">证件号码</div>'
+	                    		+'<div class="col">'+ensureform_info_data[i].card_num+'</div>'
+	                    	+'</div>'
+	                    	+'<div class="row">'
+	                    		+'<div class="col col-33">出生日期</div>'
+	                    		+'<div class="col">'+ensureform_info_data[i].birth+'</div>'
+	                    	+'</div>'
+	                    	+'<div class="row">'
+	                    		+'<div class="col col-33">手机号码</div>'
+	                    		+'<div class="col">'+ensureform_info_data[i].phone+'</div>'
+	                    	+'</div>'
+	                    	+'<div class="row">'
+	                    		+'<div class="col col-33">保单号</div>'
+	                    		+'<div class="col">'+ensureform_info_data[i].ensure_num+'</div>'
+	                    	+'</div>'
+	                    	+'<div class="row">'
+	                    		+'<div class="col col-33">生效日期</div>'
+	                    		+'<div class="col">'+ensureform_info_data[i].effect_date+'</div>'
+	                    	+'</div>'
+	                    	+'<div class="row">'
+	                    		+'<div class="col col-33">保单数量</div>'
+	                    		+'<div class="col">'+ensureform_info_data[i].ensure_shu+'</div>'
+	                    	+'</div>'
+	                    +'</div>'
+	        }
+	        ensureform_info+='</div></div>'
+
+
+		$('div.list').html(order_info+product_info+ensureform_info+benefit_info)
+
+
+
+	})
+
+
+var order_info_data={
+	"total_price":"￥11.0",
+	"order_type":"投保成功",
+	"order_num":"2015111710062168",
+	"order_time":"2015-11-08 10:50:22",
+	"pay_method":"财付通"
+}
+
+var product_info_data={
+	"ensure_name":"阳光人寿航空意外险",
+	"ensure_company":"阳光保险",
+	"ensure_type":"阳光人寿航空意外险",
+	"ensure_time":"7天",
+	"ensure_amount":"￥80万",
+	"ensure_price":"￥20",
+	"ensure_taste":"￥5.50"
+}
+
+var benefit_info_data=["法定人"]
+
+var ensureform_info_data=[{
+	"name":"印乐",
+	"sex":"女",
+	"card_type":"身份证",
+	"card_num":"310113198203110429",
+	"birth":"1982-03-11",
+	"phone":"18621645926",
+	"ensure_num":"TS45111700006712",
+	"effect_date":"2015-11-19",
+	"ensure_shu":"1"
+},{
+	"name":"陈凯",
+	"sex":"男",
+	"card_type":"身份证",
+	"card_num":"310113199108013219",
+	"birth":"1991-08-01",
+	"phone":"18621645926",
+	"ensure_num":"TS45111700006713",
+	"effect_date":"2015-11-19",
+	"ensure_shu":"2"
+}]
+
+</script>
+</body>
+</html>

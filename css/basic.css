@@ -37,6 +37,9 @@ body{
 		overflow-y:auto;
 	
 		}
+	.frame_content1::-webkit-scrollbar{
+		display: none;
+	}
 		
 	.frame_footer{
 		width:100%;
@@ -189,7 +192,8 @@ body{
 }
 
 .search_shell .search_item span{
-	padding: 2px 3px;
+	/*padding: 2px 3px;*/
+	padding: 1px;
 	font-size: 13px;
 	color: #000;
 }
@@ -283,7 +287,8 @@ span.price{
 }
 
 .font_14{
-	margin-bottom: 0px !important;
+	margin: 0px;
+	margin-bottom: 20px !important;
 }
 .font_14 .item{
 	font-size: 14px;
@@ -716,6 +721,7 @@ span.item div.row div.col:nth-child(3){
 .order_search_list{
 	margin-top: 0px;
 }
+
 .order_search_list .card{
 	margin: 0px;
 	border:solid 1px #ddd;
@@ -723,7 +729,7 @@ span.item div.row div.col:nth-child(3){
 }
 .order_search_list .card a.item div.search_shell div.search_item:nth-child(1) span:not(.start_end){
 	float: right;
-	font-size: 14px;
+	font-size: 13px;
 	color: #888;
 }
 
@@ -741,8 +747,8 @@ span.item div.row div.col:nth-child(3){
 .order_search_list .card a.item div.search_shell div.search_item:nth-child(1) span.logo{
 
 	position: relative;
-	width: 24px;
-	height: 24px;
+	width: 20px;
+	height: 20px;
 	top: 0px;
 	left: 0px;
 }
@@ -753,6 +759,10 @@ span.logo>img{
 .order_search_list .card a.item{
 	padding: 4px;
 	padding-top: 10px;
+}
+
+.order_search_list>div.list>div.card{
+	margin-bottom: 20px;
 }
 
 .order_search_list div.card div.item{
@@ -772,12 +782,98 @@ span.logo>img{
 	top: 2px;
 	padding-right:2px;
 }
+.order_search_list div.card a.item{
+	border-bottom:solid 1px red;
+}
 .order_search_list div.card div.item:last-child span{
 	position: relative;
+}
+.order_search_list div.card div.item:last-child>span:last-child{
+	margin-top: 3px;
 }
 .order_search_list div.card div.item>span:last-child{
 	float: right;
 }
+
+.ensure_search_list{
+	margin-top: 0px;
+}
+
+.ensure_search_list .card{
+	margin: 0px;
+	border:solid 1px #ddd;
+	border-top: solid 1px #fff;
+}
+.ensure_search_list .card a.item div.search_shell div.search_item:nth-child(1) span:not(.start_end){
+	float: right;
+	font-size: 13px;
+	color: #888;
+}
+
+.ensure_search_list .card a.item div.search_shell div.search_item:nth-child(2) span:not(.start_date){
+	float: right;
+}
+
+.ensure_search_list .card a.item div.search_shell div.search_item span.start_end{
+	font-size: 17px;
+	color: #111;
+	font-weight: bold;
+}
+
+.ensure_search_list .card a.item div.search_shell div.search_item span.ensure_time{
+	font-size: 14px;
+	padding-left: 15px;
+
+}
+
+.ensure_search_list .card a.item div.search_shell div.search_item:nth-child(1) span.logo{
+
+	position: relative;
+	width: 20px;
+	height: 20px;
+	top: 0px;
+	left: 0px;
+}
+
+.ensure_search_list .card a.item{
+	padding: 4px;
+	padding-top: 10px;
+}
+
+.ensure_search_list>div.list>div.card{
+	margin-bottom: 20px;
+}
+
+.ensure_search_list div.card div.item{
+	padding: 4px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	min-height: 40px !important;
+}
+
+.ensure_search_list div.card div.item span{
+	color: #888;
+	font-size: 15px;
+}
+
+.ensure_search_list div.card div.item:last-child>span>img{
+	position: relative;
+	top: 2px;
+	padding-right:2px;
+}
+.ensure_search_list div.card a.item{
+	border-bottom:solid 1px red;
+}
+.ensure_search_list div.card div.item:last-child span{
+	position: relative;
+}
+.ensure_search_list div.card div.item:last-child>span:last-child{
+	margin-top: 3px;
+}
+.ensure_search_list div.card div.item>span:last-child{
+	float: right;
+}
+
 .blue_font{
 	color:#00a0e9!important;
 	font-weight: bold;
@@ -789,6 +885,75 @@ span.logo>img{
 	font-size: 16px;
 }
 
+.ensuredetail_search_list{
+	margin-top: 0px;
+}
+
+.ensuredetail_search_list .card{
+	margin: 0px;
+	border:solid 1px #ddd;
+	border-top: solid 1px #fff;
+}
+
+.ensuredetail_search_list div.card div.item{
+	padding: 4px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	min-height: 35px !important;
+}
+
+span.ensure_detail_tit{
+	font-size: 16px;
+	font-weight: bold;
+	color: #000;
+}
+
+.item_second div.row{
+	margin: 0px;
+	padding: 0px;
+	font-size: 15px;
+	font-weight: 600;
+	-webkit-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+}
+.item_second div.row div.col{
+	padding: 3px;
+}
+.ensuredetail_search_list>div.list>div.card{
+	margin-bottom: 20px;
+}
+.ensure_infolist{
+	border-bottom: solid 1px #eee;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.ensure_infolist:last-child{
+	border-bottom: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width: 320px){
+	.order_search_list .card a.item div.search_shell div.search_item span.start_end,
+	.order_search_list .card a.item div.search_shell div.search_item:nth-child(2) span{
+	font-size: 14px;
+}
+.order_search_list .card a.item div.search_shell div.search_item:nth-child(1) span:not(.start_end){
+	font-size: 13px;
+}
+
+
+}
 
 
 
