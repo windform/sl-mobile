@@ -270,6 +270,18 @@ $(function () {
     //1、模拟数据填充
     ensureorderList()
 
+    //ensure_orderlist.html 
+    //1、订单筛选
+    $('.ensure_dress').on('tap',function(){
+         ensureDress();
+    })
+
+    //plane_orderlist.html 
+    //1、订单筛选
+    $('.plane_dress').on('tap',function(){
+         planeDress();
+    })
+
 
 });
 

@@ -319,7 +319,6 @@ function orderList(){
     }
     orderlist_box+='</div>';
     $('.order_search_list').html(orderlist_box);
-
 }
 
 function ensureorderList(){
@@ -347,8 +346,156 @@ function ensureorderList(){
     }
     orderlist_box+='</div>';
     $('.ensure_search_list').html(orderlist_box);
-
 }
+
+function ensureDress(){
+    $('.passenger_mask').remove();
+    var passenger_mask='<div class="passenger_mask">'
+    +'<div class="bar bar-header bar-dark">'
+      +'<a class="button icon-left ion-ios-arrow-back button-clear button-light passenger-back"></a>'
+      +'<h1 class="title">订单筛选</h1>'
+    +'</div> '
+    +'<div class="list list-inset passenger-list">'
+      +'<label class="item item-input">'
+        +'<span class="input-label">订单编号</span>'
+        +'<input type="text">'
+      +'</label>'
+      +'<label class="item item-input" style="padding-right:6px;">'
+        +'<span class="input-label">操作日期</span>'
+        +'<input type="text" data-field="date" data-format="yyyy-MM-dd" readonly style="padding-right:0px">-<input type="text" data-field="date" data-format="yyyy-MM-dd" readonly style="padding-right:0px">'
+      +'</label>'
+      +'<label class="item item-input order-status">'
+        +'<span class="input-label">订单状态</span>'
+        +'<a class="item-icon-right order-type-text" href="#">所有订单<i class="icon ion-ios-arrow-right"></i></a>'
+      +'</label>'
+    +'</div>'
+    +'<div class="padding">'
+        +'<button class="button button-block button-dark passenger-save">查询</button>'
+    +'</div></div>'
+
+    $('body').append(passenger_mask);
+     $('.passenger_mask').animate({
+           left:0
+      },500);
+    $('.passenger-back,.passenger-save').on('tap',function(){
+        $('.passenger_mask').animate({left:800}, 500);
+        setTimeout(function(){$('.passenger_mask').remove()},500)
+    });
+    $('.order-status').on('tap',function(event){
+      event.stopPropagation();
+      orderstatusSelect('.order-type-text',ensure_dress_data);
+    });
+}
+
+function planeDress(){
+    $('.passenger_mask').remove();
+    var passenger_mask='<div class="passenger_mask">'
+    +'<div class="bar bar-header bar-dark">'
+      +'<a class="button icon-left ion-ios-arrow-back button-clear button-light passenger-back"></a>'
+      +'<h1 class="title">订单筛选</h1>'
+    +'</div> '
+    +'<div class="list list-inset passenger-list">'
+      +'<label class="item item-input">'
+        +'<span class="input-label">PNR编号</span>'
+        +'<input type="text">'
+      +'</label>'
+      +'<label class="item item-input">'
+        +'<span class="input-label">订单编号</span>'
+        +'<input type="text">'
+      +'</label>'
+      +'<label class="item item-input" style="padding-right:6px;">'
+        +'<span class="input-label">订单日期</span>'
+        +'<input type="text" data-field="date" data-format="yyyy-MM-dd" readonly style="padding-right:0px">-<input type="text" data-field="date" data-format="yyyy-MM-dd" readonly style="padding-right:0px">'
+      +'</label>'
+      +'<label class="item item-input">'
+        +'<span class="input-label">订单票号</span>'
+        +'<input type="text">'
+      +'</label>'
+      +'<label class="item item-input">'
+        +'<span class="input-label">乘机人</span>'
+        +'<input type="text">'
+      +'</label>'
+      +'<label class="item item-input">'
+        +'<span class="input-label">订票人</span>'
+        +'<input type="text">'
+      +'</label>'
+      +'<label class="item item-input order-status1">'
+        +'<span class="input-label">订单状态</span>'
+        +'<a class="item-icon-right order-type-text" href="#">所有订单<i class="icon ion-ios-arrow-right"></i></a>'
+      +'</label>'
+      +'<label class="item item-input order-status2">'
+        +'<span class="input-label">航空公司</span>'
+        +'<a class="item-icon-right company-name-text" href="#">所有航空公司<i class="icon ion-ios-arrow-right"></i></a>'
+      +'</label>'
+    +'</div>'
+    +'<div class="padding">'
+        +'<button class="button button-block button-dark passenger-save">查询</button>'
+    +'</div></div>'
+
+    $('body').append(passenger_mask);
+     $('.passenger_mask').animate({
+           left:0
+      },500);
+    $('.passenger-back,.passenger-save').on('tap',function(){
+        $('.passenger_mask').animate({left:800}, 500);
+        setTimeout(function(){$('.passenger_mask').remove()},500)
+    });
+    $('.order-status1').on('tap',function(event){
+      event.stopPropagation();
+      orderstatusSelect('.order-type-text',ensure_dress_data);
+    });
+    $('.order-status2').on('tap',function(event){
+      event.stopPropagation();
+      orderstatusSelect('.company-name-text',company_dress_data);
+    });
+}
+
+function orderstatusSelect(valele,arr){
+  $('.ensure_mask').remove();
+  var ensure_mask='<div class="ensure_mask">'
+                  +'<div class="holder">'
+                    for(var i=0; i<arr.length; i++){
+                      ensure_mask+='<label for="ensure_order_'+i+'">'+arr[i]
+                      +'<span class="auto_radio">'
+                        +'<input type="radio" name="ensure_order_status" id="ensure_order_'+i+'">'
+                      +'</span>'
+                    +'</label>'
+                    }
+
+
+                  +'</div>'
+                +'</div>'
+  $('body').append(ensure_mask);
+  $('.ensure_mask').animate({opacity:1},300);
+  $('.holder').animate({bottom:0}, 300);
+
+ /* var val=$('.order-type-text').text();
+  console.log(val);*/
+  //$('.holder label').contents().not(':contains('+val+')').filter('input[type="radio"]').attr('checked',true);
+  //$('.holder label').contents().not(':contains('+val+')').filter('.auto_radio').addClass('icon');
+
+  $('.holder label').eq(0).find('input[type="radio"]').attr('checked',true);
+  $('.holder label').eq(0).find('.auto_radio').addClass('icon');
+
+      $('.holder label').on('tap',function(event){
+        event.stopPropagation();
+        $('.holder label').find('.auto_radio').removeClass('icon');
+        $('.holder label').find('input[type="radio"]').attr('checked',false);
+        $(this).find('.auto_radio').addClass('icon');
+        $(this).find('input[type="radio"]').attr('checked',true);
+        $(valele).html($(this).text()+'<i class="icon ion-ios-arrow-right"></i>');
+      })
+  $('.ensure_mask').on('tap',function(event){
+      event.stopPropagation();
+      $('.ensure_mask').animate({opacity:0},300);
+      $('.holder').animate({bottom:-500}, 300);
+      setTimeout(function(){$('.ensure_mask').remove()},310);
+  })
+}
+
+//保险订单筛选虚假模拟数据
+var ensure_dress_data=['所有订单','已出票','已支付','已改签','已退票','已拒票']
+var company_dress_data=['所有航空公司','南方航','中国航空','奥凯航空','春秋航空','东方航空']
 
 //保险订单列表虚假模拟数据
 var ensureorderlistdata=[{

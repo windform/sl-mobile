@@ -26,13 +26,54 @@
 		<div class="bar bar-header bar-dark">
 		<a class="button icon-left ion-ios-arrow-back button-clear button-light" onClick="window.history.back()"></a>
 		<h1 class="title">保险订单</h1>
-		<a class="button icon-right button-clear button-light">订单筛选</a></div>
+		<a class="button icon-right button-clear button-light ensure_dress">订单筛选</a></div>
 	</div>
 	<div class="frame_content1">
 		<div class="ensure_search_list">
-
-						
+			
 		</div>
+		<div id="dtBox"></div>
 	</div>
+	<!-- <div class="ensure_mask">
+		<div class="holder">
+			<label for="ensure_order_0">
+				所有订单 
+				<span class="auto_radio">
+					<input type="radio" name="ensure_order_status" id='ensure_order_0'>
+				</span>
+			</label>
+			<label for="ensure_order_1">
+				已出票 
+				<span class="auto_radio">
+					<input type="radio" name="ensure_order_status" id='ensure_order_1'>
+				</span>
+			</label>
+			<label for="ensure_order_2">
+				已支付 
+				<span class="auto_radio">
+					<input type="radio" name="ensure_order_status" id='ensure_order_2'>
+				</span>
+			</label>
+			<label for="ensure_order_3">
+				已改签 
+				<span class="auto_radio">
+					<input type="radio" name="ensure_order_status" id='ensure_order_3'>
+				</span>
+			</label>
+		</div>
+	</div> -->
+	<script>
+		$(function(){
+			// $('.holder label').eq(0).find('input[type="radio"]').attr('checked',true);
+			// $('.holder label').eq(0).find('.auto_radio').addClass('icon');
+			// $('.holder label').on('tap',function(){
+			// 	$('.holder label').find('.auto_radio').removeClass('icon');
+			// 	$('.holder label').find('input[type="radio"]').attr('checked',false);
+			// 	$(this).find('.auto_radio').addClass('icon');
+			// 	$(this).find('input[type="radio"]').attr('checked',true);
+			// })
+		 $("#dtBox").DateTimePicker({ dateFormat: "yyyy-MM-dd" });
+		})
+	</script>
 </body>
 </html>

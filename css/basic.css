@@ -217,7 +217,7 @@ span.price{
 	padding: 10px;
 	background: #fff;
 	border-bottom: solid 1px #ddd;
-	box-shadow: 0px 2px 5px rgba(0,0,0,.5);
+	/*box-shadow: 0px 2px 5px rgba(0,0,0,.5);*/
 
 }
 .canbin_con .search_item span{
@@ -636,11 +636,14 @@ span.item div.row div.col:nth-child(3){
 }
 
 .passenger-list{
-	margin-top: 55px;
+	margin: 0px;
+	margin-top: 43px;
 	margin-bottom: 0px;
+	background-color: red;
+
 }
 .passenger-list label.item span.input-label{
-	width: 85px;
+	width: 72px;
 	font-size: 14px !important;
 	color: #aaa;
 }
@@ -648,6 +651,7 @@ span.item div.row div.col:nth-child(3){
 	border:solid 1px #ddd;
 	margin-right: 7px;
 	padding-left: 5px;
+    margin-left: 5px;
 }
 .passenger-list label.item a{
 	color: #000;
@@ -930,6 +934,208 @@ span.ensure_detail_tit{
 .ensure_infolist:last-child{
 	border-bottom: none;
 }
+.ensure_mask{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 40;
+	opacity: 0;
+}
+.ensure_mask .holder{
+	position: absolute;
+	width: 100%;
+	max-height: 200px;
+	overflow: auto;
+	background-color: #fff;
+	left: 0px;
+	bottom: -500px;
+	z-index: 42;
+}
+.ensure_mask .holder::-webkit-scrollbar{
+	display: none;
+}
+.ensure_mask .holder label{
+	position: relative;
+	display: block;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+	font-size: 15px;
+	color: #848484;
+	border-bottom: solid 1px #ddd;
+}
+.ensure_mask .holder label span{
+	display: block;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	top:5px;
+	right: 0px;
+	
+}
+.ensure_mask .holder label span.icon{
+	background: url('../images/icon_radio.png') no-repeat center;
+}
+.ensure_mask .holder label span input[type='radio']{
+	display: block;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+span.pay_money{
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.pay_method{
+	background-color:#fff;
+	margin-top: 20px;
+	padding: 10px;
+}
+
+.pay_method>a{
+	position: relative;
+	display: block;
+	text-decoration: none;
+	color: #000;
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: solid 1px #eee;
+}
+.pay_method>a>span{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.pay_method>a>span.right{
+	position: absolute;
+	right: 0px;
+	font-size: 15px;
+	font-weight: normal;
+	color: #9a9a9a;
+}
+.pay_method>a>span i.pay_icon{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	margin-right: 8px;
+	background-image: url('../images/spring1.png');
+	background-repeat: no-repeat;
+}
+i.pay_lian{
+	background-position: 0px 0px
+}
+i.pay_zhi{
+	background-position: 0px -30px
+}
+i.pay_cai{
+	background-position: 0px -61px
+}
+i.pay_web{
+	background-position: 0px -90px
+}
+i.pay_card{
+	background-position: 0px -120px
+}
+i.pay_gong{
+	background-position: 0px -150px
+}
+i.pay_nong{
+	background-position: 0px -180px
+}
+i.pay_more{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	margin-left: 8px;
+	background-image: url('../images/icon_more.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.pay_mask{
+	position: fixed;
+	background-color: rgba(0,0,0,0.5);
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	z-index: 30;
+	/*display: none;*/
+}
+.pay_mask>.pay_password{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	background-color: #f8f8f8;
+	width: 100%;
+}
+
+.pay_mask>.pay_password>div.pay_pass_1{
+	padding: 10px;
+	position: relative;
+	border-bottom: solid 1px #dcdcdc;
+}
+
+.pay_mask>.pay_password>div.pay_pass_1 span.left button{
+	padding: 0px;
+	min-height: 35px !important;
+	line-height: 35px !important;
+}
+
+.pay_mask>.pay_password>div.pay_pass_1 span.right{
+	position: absolute;
+	right: 10px;
+	top: 20px;
+	font-size: 15px;
+	font-weight: bold;
+	color: #858585;
+}
+
+.pay_mask>.pay_password>form.pay_pass_2{
+	padding: 10px;
+	position: relative;
+	border-bottom: solid 1px #dcdcdc;
+	padding-bottom: 0px;
+}
+
+.pay_mask>.pay_password>form.pay_pass_2>input[type="password"]{
+	display: block;
+	width: 100%;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 16px;
+	border:solid 1px #c6c6c6;
+	height: 45px;
+}
+.pay_mask>.pay_password>form.pay_pass_2>button{
+	margin-top: 10px;
+	min-height: 45px !important;
+	line-height: 45px !important;
+	color: #fff;
+	font-weight: bold;
+
+}
+.button-orange{
+	background-color: #FF9A00;
+}
+
+.bar.bar-dark{
+	background-color: #009FE9;
+}
+
+
 
 
 

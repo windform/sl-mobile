@@ -29,15 +29,21 @@
 		<div class="bar bar-header bar-dark">
 		<a class="button icon-left ion-ios-arrow-back button-clear button-light" onClick="window.history.back()"></a>
 		<h1 class="title">机票订单</h1>
-		<a class="button icon-right button-clear button-light">订单筛选</a></div>
+		<a class="button icon-right button-clear button-light plane_dress">订单筛选</a></div>
 	</div>
 	<div class="frame_content1">
 		<div class="order_search_list">
 
 						
 		</div>
+		<div id="dtBox"></div>
 	</div>
 
-
+<script>
+	$(function(){
+		$("#dtBox").DateTimePicker({ dateFormat: "yyyy-MM-dd" });
+	})
+	
+</script>
 </body>
 </html>

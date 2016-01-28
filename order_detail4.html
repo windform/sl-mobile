@@ -26,7 +26,7 @@
 		<div class="bar bar-header bar-dark">
 		<a class="button icon-left ion-ios-arrow-back button-clear button-light" onClick="window.history.back()"></a>
 		<h1 class="title">订单详细</h1>
-		 <a class="button icon-right button-clear button-light" href="#">取消订单</a>
+		 <a class="button icon-right button-clear button-light" href="#"></a>
 		</div> 
 	</div>
 	<div class="frame_content1">
@@ -366,7 +366,7 @@
 									+'</div>'
 			plane_ticket_info+='</div></div>'
 		//$(".frame_content1").html(plane_order_info);
-		$(".frame_content1").html(plane_order_info+air_rang_info+plane_ticket_info+plane_connect_info+plane_pay_info);
+		$(".frame_content1").html(plane_order_info+air_rang_info+plane_ticket_info+plane_connect_info);
 
 		$('.order_read_btn').click(function(){
 		        $('.row_order_rules').fadeToggle(300);
@@ -376,8 +376,8 @@
 
 
 	var plane_order_info_data={
-		"total_price":"￥4520",
-		"order_status":"新订单",
+		"total_price":"￥5020",
+		"order_status":"已拒票",
 		"order_num":"2015110810507118",
 		"order_time":"2015-11-08 10:50:22"
 	}
@@ -388,7 +388,7 @@
 		"fly_time":"2h10m",
 		"end_date":"2016-01-12",
 		"end_time":"周二 08:35",
-		"end_airport":"上海虹桥T2",
+		"end_airport":"成都双流T2",
 		"company_logo":"logo",
 		"company":"吉祥HO1252",
 		"type":"321",
@@ -398,11 +398,11 @@
 	},{
 		"start_date":"2016-01-18",
 		"start_time":"周一 06:35",
-		"start_airport":"上海虹桥",
+		"start_airport":"成都双流T2",
 		"fly_time":"2h10m",
 		"end_date":"2016-01-18",
 		"end_time":"周一 08:35",
-		"end_airport":"北京T2",
+		"end_airport":"乌鲁木齐T2",
 		"company_logo":"logo",
 		"company":"吉祥HO1252",
 		"type":"321",
@@ -417,22 +417,22 @@ var policy={
 }
 
 var plane_ticket_info_data=[{
-    'name':'沈佳宜',
+    'name':'柯震东',
     'person_num':'36078216457828',
     'person_type':'成人',
     'ensure_num':'8',
     'ticket_num':'Yu7894667',
     'cabin':'R',
-    'ticket_price':'￥3542.52',
+    'ticket_price':'￥4042.52',
     'airline_taste':'￥50/0',
-    'single_price':'￥3591.52',
+    'single_price':'￥4045.52',
     'ticket_point':'3.3%',
     'agent_price':'￥18.48',
     'ticketout_recommend':'标准政策',
     'policy_type':'B2B,PSB',
     'ticketout_time':'00:00-23:59'
 },{
-    'name':'沈晓明',
+    'name':'柯南',
     'person_num':'JHFB87654674',
     'person_type':'儿童',
     'ensure_num':'４',
@@ -449,12 +449,12 @@ var plane_ticket_info_data=[{
 }]
 
 var plane_connect_info_data={
-	"name":"沈佳宜",
+	"name":"柯震东",
 	"phone":"15620780149"
 }
 
 var plane_pay_info_data={
-	"pay_price":"￥4520",
+	"pay_price":"￥5020",
 	"total_profit":"￥50.00",
 	"ensure_price":"￥10.00"
 
