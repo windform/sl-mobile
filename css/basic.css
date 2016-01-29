@@ -999,6 +999,7 @@ span.pay_money{
 	background-color:#fff;
 	margin-top: 20px;
 	padding: 10px;
+	padding-bottom: 0px;
 }
 
 .pay_method>a{
@@ -1064,6 +1065,37 @@ i.pay_more{
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+.pay_method>a>span i.person_icon{
+	display: inline-block;
+	width: 30px;
+	height: 23px;
+	vertical-align: middle;
+	margin-right: 8px;
+	background-image: url('../images/personal_center1.png');
+	background-repeat: no-repeat;
+}
+i.person_list{
+	background-position: 0px 0px
+}
+i.person_passenger{
+	background-position: 0px -23px
+}
+i.person_myacount{
+	background-position: 0px -45px
+}
+i.person_yu{
+	background-position: 0px -69px
+}
+i.person_moreset{
+	background-position: 0px -93px
+}
+i.person_pass{
+	background-position: 0px -116px
+}
+i.person_about{
+	background-position: 0px -139px
+}
 .pay_mask{
 	position: fixed;
 	background-color: rgba(0,0,0,0.5);
@@ -1072,12 +1104,12 @@ i.pay_more{
 	bottom: 0px;
 	right: 0px;
 	z-index: 30;
-	/*display: none;*/
+	opacity: 0;
 }
 .pay_mask>.pay_password{
 	position: absolute;
 	left: 0px;
-	bottom: 0px;
+	bottom: -500px;
 	background-color: #f8f8f8;
 	width: 100%;
 }
@@ -1125,14 +1157,100 @@ i.pay_more{
 	line-height: 45px !important;
 	color: #fff;
 	font-weight: bold;
-
 }
 .button-orange{
 	background-color: #FF9A00;
 }
-
+.button-aqua{
+	background-color: #00a1ea;
+}
 .bar.bar-dark{
 	background-color: #009FE9;
+}
+
+.pop{
+	background-color: #fff;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 50%;
+	border-radius:9px;
+}
+.pop_first{
+	padding: 10px;
+	border-bottom: solid 1px #c7c7c7;
+	position: relative;
+}
+.pop_first>.pop_title{
+	font-size: 16px;
+}
+.pop_first>.pop_close{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	right: 10px;
+	top: 8px;
+	-webkit-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	background: url('../images/icon_close.png') no-repeat;
+}
+.pop_second{
+	padding: 20px 10px;
+	padding-bottom: 2px;
+}
+.pop_second .pop_content{
+	padding-bottom: 15px;
+	font-size: 16px;
+	text-align: center;
+	-webkit-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+}
+.pop_second>div.btn_group>button{
+	margin-top: 10px;
+	min-height: 45px !important;
+	line-height: 45px !important;
+	color: #fff;
+	font-weight: bold;
+}
+.bank_page{
+		position: fixed;
+		left:500px;
+		top:0px;
+		background-color: #fff;
+		bottom: 0px;
+		right: 0px;
+		z-index: 30;
+		padding-top: 48px;
+}
+
+.bank_logo a.col{
+		display: block;
+		padding: 8px;
+		padding-bottom: 0px;
+}
+.bank_logo{
+		margin-top: -5px!important;
+		text-align: center;
+		display: none;
+}
+
+.bank_logo a.col img{
+		width: 100%;
+}
+
+.person_bg{
+	background-image: url('../images/personal_center_bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 70px;
+	padding-bottom: 70px;
+	text-align: center;
+}
+.mar-zero{
+	padding-bottom: 0px;
+}
+.mar-zero>a{
+	font-weight: normal;
 }
 
 

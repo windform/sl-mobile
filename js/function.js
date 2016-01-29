@@ -348,6 +348,93 @@ function ensureorderList(){
     $('.ensure_search_list').html(orderlist_box);
 }
 
+function pop1(arr,url){
+  $('.pay_mask').remove();
+      var pop='<div class="pay_mask">'
+          +'<div class="pay_password">'
+            +'<div class="pay_pass_1">'
+              +'<span class="left"><button class="button button-assertive lianbi-cancel">'+arr[0]+'</button></span>'
+              +'<span class="right">'+arr[1]+'</span>'
+            +'</div>'
+            +'<form action="" class="pay_pass_2">'
+              +'<input type="password">'
+              +'<button class="button button-block button-orange pay-onfirm">'+arr[2]+'</button>'
+            +'</form>'
+          +'</div>'
+        +'</div>'
+      $('body').append(pop);
+      $('.pay-onfirm').on('tap',function(){
+          window.location.href=url;
+      })
+      $('.pay_mask').animate({opacity:1},300);
+          $('.pay_password').animate({bottom:0}, 300);
+          $('.lianbi-cancel').on('tap',function(){
+        $('.pay_mask').animate({opacity:0},300);
+            $('.pay_password').animate({bottom:-500}, 300);
+            setTimeout(function(){$('.pay_mask').remove()},310);
+      })
+}
+function pop2(arr,url){
+  $('.pay_mask').remove();
+      var pop='<div class="pay_mask">'
+              +'<div class="pop">'
+              +'<div class="pop_first">'
+                +'<strong class="pop_title">'+arr[0]+'</strong>'
+                +'<span class="pop_close"></span>'
+              +'</div>'
+              +'<div class="pop_second">'
+                +'<div class="pop_content">'+arr[1]+'</div>'
+                +'<div class="btn_group"> '
+                  +'<button class="button button-block button-aqua lianbi-charge">'+arr[2]+'</button>' 
+                +'</div>'
+              +'</div>'
+            +'</div>'
+        +'</div>'
+      $('body').append(pop);
+      $('.lianbi-charge').on('tap',function(){
+          window.location.href=url;
+      })
+      $('.pay_mask').animate({opacity:1},300);
+      $('.pop_close').on('tap',function(){
+        $('.pay_mask').animate({opacity:0},300);
+            setTimeout(function(){$('.pay_mask').remove()},310);
+      })
+}
+
+function webBank(title,arr){
+      var len=Math.ceil(arr.length/3);
+      $('.bank_page').remove();
+      var bank_logo='<div class="bank_page">'
+            +'<div class="bar bar-header bar-dark">'
+            +'<a class="button icon-left ion-ios-arrow-back button-clear button-light webbank_close" ></a>'
+            +'<h1 class="title">'+title+'</h1>'
+            +'</div> '
+       for(var i=0;i<len;i++){
+        bank_logo+='<div class="row bank_logo">'         
+                  +'<a class="col col-33" href="'+arr[3*i].link+'">'
+                    +'<img src="images/'+arr[3*i].logo+'" alt="">'
+                  +'</a>'
+                  +'<a class="col col-33" href="'+arr[3*i+1].link+'">'
+                    +'<img src="images/'+arr[3*i+1].logo+'" alt="">'
+                  +'</a>'
+                  +'<a class="col col-33" href="'+arr[3*i+2].link+'">'
+                    +'<img src="images/'+arr[3*i+2].logo+'" alt="">'
+                  +'</a>'
+              +'</div>'
+       }
+
+       bank_logo+='</div>';
+       $('body').append(bank_logo);
+       $('.bank_page').animate({left:0},300);
+       setTimeout(function(){$('.bank_logo').css('display','flex')},300)
+       $('.webbank_close').on('tap',function(){
+        $('.bank_page').animate({left:500},300);
+        $('.bank_logo').css('display','none');
+              setTimeout(function(){$('.bank_page').remove()},310);
+       })
+
+    }
+
 function ensureDress(){
     $('.passenger_mask').remove();
     var passenger_mask='<div class="passenger_mask">'
@@ -492,6 +579,9 @@ function orderstatusSelect(valele,arr){
       setTimeout(function(){$('.ensure_mask').remove()},310);
   })
 }
+
+
+
 
 //保险订单筛选虚假模拟数据
 var ensure_dress_data=['所有订单','已出票','已支付','已改签','已退票','已拒票']

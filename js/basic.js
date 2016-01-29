@@ -239,26 +239,10 @@ $(function () {
 
     //申请退改签出现提示
     $('.btn-ticketout').tap(function(){
-         $('.ticketout_mask').remove();
-        var mask='<div class="ticketout_mask">'
-                    +'<div class="row">'
-                        +'<div class="col col-offset-10 col-80">'
-                            +'<div class="padding">'
-                                +'<a class="button button-small fr button-icon icon ion-close btn-close"></a>'
-                            +'</div>'
-                            +'<div class="padding">'
-                                +'<p>如需办理退改签，请拨打客服专线022-84858687</p>'
-                            +'</div>'
-                            +'<div class="padding">'
-                                +'<button class="button button-block button-positive">拨打客服专线</button>'
-                            +'</div>'
-                        +'</div>'
-                    +'</div>'
-                +'</div>';
-        $('body').append(mask);
-        $('.btn-close').tap(function(){
-            $('.ticketout_mask').remove();
-        })
+        var popStr=['申请退改签','如需办理退改签，请拨打客服专线022-84858687','拨打客服专线']
+        var url='#'
+        pop2(popStr,url);
+         
     })
 
 
@@ -283,7 +267,166 @@ $(function () {
     })
 
 
+    //pay.html
+    //1、连币支付判断
+    $('.lianbi').on('tap',function(){
+            var payPrice=parseFloat(($('.pay_price').text().substr(1))).toFixed(2);
+            var moneyCount=parseFloat(($('.money_count').text().substr(1))).toFixed(2);
+            if(payPrice<moneyCount || payPrice==moneyCount ){
+                var popStr=['取消','请输入连币支付密码','确认支付']
+                var url='#'
+                pop1(popStr,url);
+            }else{
+                 var popStr=['余额不足','连币余额不足，请充值后再进行支付','连币充值']
+                 var url='#'
+                 pop2(popStr,url);
+            };
+        })
+
+    //2、网上银行支付
+    $('.web_bank').on('tap',function(){
+        webBank('网上银行',bank_logo_data);
+    })
+
+    //2、信用卡大额支付
+    $('.card_bank').on('tap',function(){
+        webBank('信用卡大额',bank_logo_data1);
+    })
+
+
 });
+
+//网上银行图片数据
+var bank_logo_data=[{
+        "logo": "bank_gongshang.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_jianshe.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_zhaoshang.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_zhongguo.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_nongye.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_jiaotong.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_pufa.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_guangfa.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_zhongxin.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_xingye.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_shenfa.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_minsheng.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_ningbo.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_pingan.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_shanghai.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_youzheng.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_beijing.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_nongshang.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_guangda.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_jianshe_company.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_nongye_company.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_zhaoshang_company.png", 
+        "link": "#"
+    }, {
+        "logo": "undefined0.png", 
+        "link": "#"
+    }, {
+        "logo": "undefined1.png", 
+        "link": "#"
+    }]
+
+//信用卡大额图片数据
+var bank_logo_data1=[{
+        "logo": "bank_gongshang.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_jianshe.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_zhaoshang.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_zhongguo.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_nongye.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_jiaotong.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_pufa.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_guangfa.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_zhongxin.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_xingye.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_shenfa.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_minsheng.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_ningbo.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_pingan.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_shanghai.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_youzheng.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_beijing.png", 
+        "link": "#"
+    }, {
+        "logo": "bank_nongshang.png", 
+        "link": "#"
+    }]
 
 
 
