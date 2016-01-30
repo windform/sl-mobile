@@ -644,8 +644,8 @@ span.item div.row div.col:nth-child(3){
 }
 .passenger-list label.item span.input-label{
 	width: 72px;
-	font-size: 14px !important;
-	color: #aaa;
+	font-size: 15px !important;
+	color: #939393;
 }
 .passenger-list label.item input{
 	border:solid 1px #ddd;
@@ -1000,6 +1000,7 @@ span.pay_money{
 	margin-top: 20px;
 	padding: 10px;
 	padding-bottom: 0px;
+	padding-top: 0px;
 }
 
 .pay_method>a{
@@ -1016,6 +1017,10 @@ span.pay_money{
 .pay_method>a>span{
 	display: inline-block;
 	vertical-align: middle;
+}
+
+.pay_method>a>span.left{
+	width: 140px;
 }
 
 .pay_method>a>span.right{
@@ -1076,25 +1081,31 @@ i.pay_more{
 	background-repeat: no-repeat;
 }
 i.person_list{
-	background-position: 0px 0px
+	background-position: 0px 0px;
 }
 i.person_passenger{
-	background-position: 0px -23px
+	background-position: 0px -23px;
 }
 i.person_myacount{
-	background-position: 0px -45px
+	background-position: 0px -45px;
 }
 i.person_yu{
-	background-position: 0px -69px
+	background-position: 0px -69px;
 }
 i.person_moreset{
-	background-position: 0px -93px
+	background-position: 0px -93px;
 }
 i.person_pass{
-	background-position: 0px -116px
+	background-position: 0px -116px;
 }
 i.person_about{
-	background-position: 0px -139px
+	background-position: 0px -139px;
+}
+i.person_name{
+	background-position: 0px -161px;
+}
+i.person_phone{
+	background-position: 0px -185px;
 }
 .pay_mask{
 	position: fixed;
@@ -1246,12 +1257,96 @@ i.person_about{
 	padding-bottom: 70px;
 	text-align: center;
 }
+.person_bg button{
+	font-size: 15px;
+}
 .mar-zero{
 	padding-bottom: 0px;
 }
 .mar-zero>a{
 	font-weight: normal;
 }
+
+.mar-zero>a>span.right>i.pay_more{
+	position: relative;
+	top:-5px;
+}
+.person_btn{
+	border-style:none;
+	background-color: #e02422;
+	color: #fff;
+	border-radius:3px;
+	padding: 6px 12px;
+	position: relative;
+	top: -4px;
+}
+.login-list{
+	margin-top: 0px;
+}
+.login-list label.item input{
+	border:none;
+	font-size: 16px;
+}
+span.image_check{
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	right:3px;
+	top:3px;
+	background: url('../images/check-code.jpg') no-repeat center;
+}
+button.image_check{
+	border-style:none;
+	border-radius: 5px;
+	color: #fff;
+	/*width: 90px;*/
+	height: 35px;
+	background-color: #e02422;
+	position: absolute;
+	right:16px;
+	top:6px;
+}
+.login_btn_shell{
+	padding: 10px;
+	margin-top: 20px;
+	background-color: #fff;
+}
+.login_btn_shell>div{
+	padding-top:5px; 
+	text-align: right;
+}
+
+.login_btn_shell>p{
+	padding-top:15px;
+	padding-bottom: 15px; 
+	text-align: center;
+	color:#939393;
+	font-size: 15px;
+}
+.login_btn_shell>div>a{
+	text-decoration: none;
+	font-size: 15px;
+	color: #939393;
+}
+.login_btn_shell>p>a{
+	font-size: 15px;
+	color: #939393;
+}
+.login_btn_shell button{
+	color:#fff;
+}
+span.r_pos{
+	position:absolute; 
+	right:5px; 
+	top:8px;
+}
+a.pad_ten{
+	padding-left: 10px;
+}
+.mar_tew{
+	margin-top: 20px;
+}
+
 
 
 

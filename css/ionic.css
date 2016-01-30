@@ -8321,7 +8321,7 @@ progress {
 .button {
   border-color: transparent;
   background-color: #f8f8f8;
-  color: #444;
+  /* color: #444; */
   position: relative;
   display: inline-block;
   margin: 0;
@@ -8338,7 +8338,7 @@ progress {
   line-height: 42px;
   cursor: pointer; }
   .button:hover {
-    color: #444;
+   /*  color: #444; */
     text-decoration: none; }
   .button.active, .button.activated {
     background-color: #e5e5e5; }

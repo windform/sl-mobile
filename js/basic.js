@@ -253,9 +253,7 @@ $(function () {
     //ensure_orderlist.html
     //1、模拟数据填充
     ensureorderList()
-
-    //ensure_orderlist.html 
-    //1、订单筛选
+    //2、订单筛选
     $('.ensure_dress').on('tap',function(){
          ensureDress();
     })
@@ -294,8 +292,68 @@ $(function () {
     })
 
 
+    //my.html
+    //1、用户登陆或注册
+    $('.log-in').on('tap',function(){
+        window.location.href='login.html';
+    })
+
+    //login.html
+    //1、登陆
+    $('.login-button').on('tap',function(){
+         window.location.href='person_center.html';
+    });
+    //2、注册新账号
+    $('.register-button').on('tap',function(){
+        window.location.href='register.html';
+    })
+
+
+    //pass_forgot.html
+    $('.forgot-next').on('tap',function(){
+        window.location.href='pass_reset.html';
+    })
+
+    //pass_reset.html
+    $('.pass-reset').on('tap',function(){
+        window.location.href='login.html';
+    })
+
+    //register.html
+    $('.register-next').on('tap',function(){
+        window.location.href='register_info.html';
+    })
+
+    //register_info.html
+    //1、选择用户性质
+    $('.property').on('tap',function(event){
+        event.stopPropagation();
+        orderstatusSelect('.property-text',property_data);
+    })
+    //2、重填所有信息
+    $('.reset-padding').on('tap',function(){
+        $('.reset-list').find('input').val('');
+        //$('.reset-list').find('a.property-text').val('个人');
+    })
+    //3、提交用户信息
+    $('.submit-button').on('tap',function(){
+        window.location.href='login.html';
+    })
+
+
+    //person_center.html
+    //1、退出登录
+    $('.log-out').on('tap',function(){
+        window.location.href='my.html'
+    })
+
+
+
+
 });
 
+//用户性质数据
+var property_data=['个人','同行'];
 //网上银行图片数据
 var bank_logo_data=[{
         "logo": "bank_gongshang.png", 
