@@ -356,7 +356,7 @@
 						+'<p>'+plane_pay_info_data.ensure_price+'</p>'
 					+'</div>'
 					+'<div class="col">'
-						+'<button class="button button-assertive">支付</button>'
+						+'<button class="button button-assertive pay-ticket-price">支付</button>'
 					+'</div>'
 				+'</div>'
 
@@ -368,6 +368,9 @@
 		//$(".frame_content1").html(plane_order_info);
 		$(".frame_content1").html(plane_order_info+air_rang_info+plane_ticket_info+plane_connect_info+plane_pay_info);
 
+		$('.pay-ticket-price').on('tap',function(){
+			window.location.href="pay.html";
+		})
 		$('.order_read_btn').click(function(){
 		        $('.row_order_rules').fadeToggle(300);
 		        $(this).toggleClass('ion-arrow-up-b');

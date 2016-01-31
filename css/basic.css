@@ -639,7 +639,6 @@ span.item div.row div.col:nth-child(3){
 	margin: 0px;
 	margin-top: 43px;
 	margin-bottom: 0px;
-	background-color: red;
 
 }
 .passenger-list label.item span.input-label{
@@ -1345,6 +1344,98 @@ a.pad_ten{
 }
 .mar_tew{
 	margin-top: 20px;
+}
+
+.trade_password,.set_account_wrapper{
+	position: fixed;
+	z-index: 30;
+	left: 500px;
+	/*left: 0px;*/
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	background-color: #eee;
+	padding-top: 43px;
+}
+
+.mar_top43{
+	margin-top: 43px;
+}
+.account_list{
+	margin-bottom: 20px;
+}
+.account_up{
+	background-color: #fff;
+	border-bottom: solid 1px #ddd;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	position: relative;
+}
+
+.account_down{
+	background-color: #fff;
+	border-bottom: solid 1px #ddd;
+	/*padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;*/
+	padding: 20px 10px;
+	position: relative;
+}
+.account_down span.account_num{
+	font-size: 16px;
+	font-weight: bold;
+}
+.account_down span.on_off{
+	display: inline-block;
+/*	background-color:#00a1ea;*/
+    background-color:#dd2223;
+	border-radius: 5px;
+	height: 25px;
+	width: 70px;
+	padding: 1px;
+	position: absolute;
+	right: 10px;
+	top: 16px;
+	color: #fff;
+	line-height: 25px;
+	text-align: center;
+}
+.account_down span.on_off input[type="checkbox"]{
+	position: absolute;
+	display: block;
+	width: 60px;
+	height: 24px;
+	opacity: 0;
+	z-index: 5;
+}
+.account_down span.on_off span.square{
+	background-color: #fff;
+	width: 32px;
+	height: 23px;
+	border-radius: 4px;
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	z-index: 4;
+
+}
+span.account_img{
+	display: inline-block;
+	width: 130px;
+}
+
+span.account_remove{
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+	background: url('../images/icon_delete.png') no-repeat center;
+	position: absolute;
+	right: 10px;
+	top: 16px;
+}
+span.account_img img{
+	width: 100%;
 }
 
 

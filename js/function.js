@@ -365,6 +365,7 @@ function pop1(arr,url){
       $('body').append(pop);
       $('.pay-onfirm').on('tap',function(){
           window.location.href=url;
+          return false;
       })
       $('.pay_mask').animate({opacity:1},300);
           $('.pay_password').animate({bottom:0}, 300);
@@ -570,7 +571,7 @@ function orderstatusSelect(valele,arr){
         $('.holder label').find('input[type="radio"]').attr('checked',false);
         $(this).find('.auto_radio').addClass('icon');
         $(this).find('input[type="radio"]').attr('checked',true);
-        $(valele).html($(this).text()+'<i class="icon ion-ios-arrow-right"></i>');
+        $(valele).html($(this).text()+'<span class="right r_pos"><i class="pay_more"></i></span>');
       })
   $('.ensure_mask').on('tap',function(event){
       event.stopPropagation();
@@ -580,8 +581,85 @@ function orderstatusSelect(valele,arr){
   })
 }
 
+function tradePass(){
+  $('.trade_password').remove();
+    var tradePass='<div class="trade_password">'
+    +'<div class="bar bar-header bar-dark">'
+      +'<a class="button icon-left ion-ios-arrow-back button-clear button-light trade_close"></a>'
+      +'<h1 class="title">交易密码设置</h1>'
+    +'</div>'
+    +'<div class="list list-inset passenger-list login-list">'
+        +'<label class="item item-input">'
+          +'<span class="input-label">手机号</span>'
+          +'<input type="text" value="13502635423">'
+        +'</label>'
+        +'<label class="item item-input" style="position:relative">'
+          +'<span class="input-label">认证码</span>'
+          +'<input type="text">'
+          +'<button class="image_check">获取验证码</button>'
+        +'</label>'
+        +'<label class="item item-input">'
+          +'<span class="input-label">支付密码</span>'
+          +'<input type="password">'
+        +'</label>'
+        +'<label class="item item-input">'
+          +'<span class="input-label">确认支付密码</span>'
+          +'<input type="password">'
+        +'</label>'
+    +'</div>'
+    +'<div class="login_btn_shell">'
+      +'<button class="button button-block button-orange password-submit">提交</button>'
+    +'</div>'
+  +'</div>'
+  $('body').append(tradePass);
+ // $('.pass_change').on('tap',function(){
+      $('.trade_password').animate({left:0},300);
+   // })
+    $('.trade_close,.password-submit').on('tap',function(){
+      $('.trade_password').animate({left:500},300);
+      setTimeout(function(){$('.trade_password').remove()},310)
+    })
+
+  }
 
 
+function setAccount(){
+    $('.set_account_wrapper').remove();
+    var setAccount='<div class="trade_password set_account_wrapper">'
+      +'<div class="bar bar-header bar-dark">'
+        +'<a class="button icon-left ion-ios-arrow-back button-clear button-light trade_close"></a>'
+        +'<h1 class="title">设置账号</h1>'
+      +'</div>'
+      +'<div class="list list-inset passenger-list login-list">'
+          +'<label class="item item-input pay-platform">'
+            +'<span class="input-label">支付平台</span>'
+            +'<a class="item-icon-right pad_ten pay-platform-text" href="#">财付通<span class="right r_pos"><i class="pay_more"></i></span></a>'
+          +'</label>'
+          +'<label class="item item-input">'
+            +'<span class="input-label"> 交易账号</span>'
+            +'<input type="password">'
+          +'</label>'
+      +'</div>'
+      +'<div class="login_btn_shell">'
+        +'<button class="button button-block button-orange accountnum-submit">提交</button>'
+      +'</div>'
+    +'</div>'
+    $('body').append(setAccount);
+    $('.set_account_wrapper').animate({left:0},300);
+    $('.trade_close,.accountnum-submit').on('tap',function(){
+      $('.set_account_wrapper').animate({left:500},300);
+      setTimeout(function(){$('.set_account_wrapper').remove()},310)
+    });
+    $('.pay-platform').on('tap',function(event){
+        event.stopPropagation();
+        orderstatusSelect('.pay-platform-text',pay_platform_data);
+    })
+
+  }
+
+
+
+var pay_platform_data=['财付通','支付宝','汇付天下','快钱','易宝'];
 
 //保险订单筛选虚假模拟数据
 var ensure_dress_data=['所有订单','已出票','已支付','已改签','已退票','已拒票']

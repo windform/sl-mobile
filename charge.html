@@ -25,59 +25,34 @@
 	<div class="frame_header1">
 		<div class="bar bar-header bar-dark">
 		<a class="button icon-left ion-ios-arrow-back button-clear button-light" onClick="window.history.back()"></a>
-		<h1 class="title">用户注册</h1>
-		<a class="button icon-right button-clear button-light reset-padding">重填</a>
+		<h1 class="title">充值</h1>
+		<!-- <a class="button icon-right button-clear button-light">共52趟</a>-->
 		</div> 
 	</div>
 	<div class="frame_content1">
-		<div class="list list-inset passenger-list login-list reset-list">
-			  <label class="item item-input property">
-			    <span class="input-label">
-			      性质
-			    </span>
-			    <a class="item-icon-right property-text" href="#">
-			    	个人<span class="right r_pos"><i class="pay_more"></i></span>
-			    </a>
-			  </label>
+		<div class="canbin_con">
+			<span class="pay_money">连币余额：<span class="red_font pay_price">￥0.00</span></span>
+		</div>
+		<div class="list list-inset passenger-list login-list mar_tew">
 			  <label class="item item-input">
 			    <span class="input-label">
-			      用户名
+			      连币充值额度
 			    </span>
-			    <input type="text">
-			    <button class="image_check" style="width:60px;">检测</button>
+			    <input type="text" value="">
 			  </label>
-			  <label class="item item-input">
+			  <label class="item item-input charge_method">
 			    <span class="input-label">
-			      密码
+			      选择支付方式
 			    </span>
-			    <input type="password">
-			  </label>
-			  <label class="item item-input">
-			    <span class="input-label">
-			      确认密码
-			    </span>
-			    <input type="password">
-			  </label>
-			  <label class="item item-input">
-			    <span class="input-label">
-			      姓名
-			    </span>
-			    <input type="text">
-			  </label>
-			  <label class="item item-input">
-			    <span class="input-label">
-			      固定电话(选填)
-			    </span>
-			    <input type="text">
+			    <a class="item-icon-right charge_text" href="#">财付通<span class="right r_pos"><i class="pay_more"></i></span></a>
 			  </label>
 		</div>
 		<div class="login_btn_shell">
-			<button class="button button-block button-orange submit-button">
-				提交
+			<button class="button button-block button-orange charge-button">
+				充值
 			</button>
 		</div>
 
 	</div>
-
 </body>
 </html>

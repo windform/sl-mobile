@@ -272,11 +272,11 @@ $(function () {
             var moneyCount=parseFloat(($('.money_count').text().substr(1))).toFixed(2);
             if(payPrice<moneyCount || payPrice==moneyCount ){
                 var popStr=['取消','请输入连币支付密码','确认支付']
-                var url='#'
+                var url='plane_orderlist.html'
                 pop1(popStr,url);
             }else{
                  var popStr=['余额不足','连币余额不足，请充值后再进行支付','连币充值']
-                 var url='#'
+                 var url='charge.html'
                  pop2(popStr,url);
             };
         })
@@ -346,12 +346,81 @@ $(function () {
     $('.log-out').on('tap',function(){
         window.location.href='my.html'
     })
+    //2、充值账户
+    $('.charge_btn').on('tap',function(){
+        window.location.href='charge.html'
+    })
+
+
+    //account_set.html
+    //1、性别选择
+    $('.sex_label').on('tap',function(event){
+        event.stopPropagation();
+        orderstatusSelect('.sex_text',sex_data);
+    })
+    //2、证件类型选择
+    $('.card_type_label').on('tap',function(event){
+        event.stopPropagation();
+        orderstatusSelect('.card_type_text',card_type_data);
+    })
+    //3、交易密码设置
+    $('.pass_change').on('tap',function(){
+        tradePass();
+    })
+    //4、确认修改按钮跳转
+    $('.account-confirm').on('tap',function(){
+        window.location.href='person_center.html';
+    })
+
+    //charge.html
+    //1、选择支付方式
+    $('.charge_method').on('tap',function(event){
+        event.stopPropagation();
+        orderstatusSelect('.charge_text',charge_method_data);
+    })
+    //2、充值按钮跳转
+    $('.charge-button').on('tap',function(){
+        window.location.href='account_set.html';
+    })
+
+    //password_change.html
+    $('.pass_revise').on('tap',function(){
+        window.location.href='person_center.html';
+    })
+
+    //more_set.html
+    //1、checkbox组件改装代码
+    $('.on_off').eq(0).css('backgroundColor','#00a1ea').find('input[type="checkbox"]').attr('checked','checked').next('.square').css('left',37)
+        $('.on_off').find('input[type="checkbox"]').on('tap',function(){
+            if($(this).is(":checked")){
+                $(this).next('.square').animate({left:37},100,'ease-in-out');
+                $(this).parent().animate({backgroundColor:'#00a1ea'},100,'ease-in-out');
+            }else{
+                $(this).next('.square').animate({left:1},100,'ease-in-out');
+                $(this).parent().animate({backgroundColor:'#dd2223'},100,'ease-in-out');
+            }
+        })
+        $('.account_remove').on('tap',function(){
+            $(this).parent().parent().remove();
+        })
+    //2、设置账号
+    $('.set_account').on('tap',function(){
+         setAccount();
+    })
+    
+
 
 
 
 
 });
 
+
+var sex_data=['男','女'];
+var card_type_data=['身份证','出生证','港澳同胞证','回乡证','警官证'];
+
+//支付方式数据
+var charge_method_data=['财付通','支付宝','易生','汇付天下'];
 //用户性质数据
 var property_data=['个人','同行'];
 //网上银行图片数据
