@@ -647,10 +647,11 @@ span.item div.row div.col:nth-child(3){
 	color: #939393;
 }
 .passenger-list label.item input{
-	border:solid 1px #ddd;
+	border:none;
 	margin-right: 7px;
 	padding-left: 5px;
     margin-left: 5px;
+    font-size: 16px;
 }
 .passenger-list label.item a{
 	color: #000;
@@ -658,7 +659,7 @@ span.item div.row div.col:nth-child(3){
 	font-size: 14px;
 }
 
-.padding>p.text-left{
+.padding>p.text-right{
 	color: #aaa;
 }
 .info_select{
@@ -946,7 +947,7 @@ span.ensure_detail_tit{
 .ensure_mask .holder{
 	position: absolute;
 	width: 100%;
-	max-height: 200px;
+	max-height: 220px;
 	overflow: auto;
 	background-color: #fff;
 	left: 0px;
@@ -971,14 +972,14 @@ span.ensure_detail_tit{
 .ensure_mask .holder label span{
 	display: block;
 	position: absolute;
-	width: 32px;
-	height: 32px;
-	top:5px;
+	width: 25px;
+	height: 25px;
+	top:8px;
 	right: 0px;
 	
 }
 .ensure_mask .holder label span.icon{
-	background: url('../images/icon_radio.png') no-repeat center;
+	background: url('../images/icon_radio_1.png') no-repeat center;
 }
 .ensure_mask .holder label span input[type='radio']{
 	display: block;
@@ -1106,6 +1107,14 @@ i.person_name{
 i.person_phone{
 	background-position: 0px -185px;
 }
+
+i.person_plane{
+	background-position: 0px -210px;
+}
+
+i.person_ensure{
+	background-position: 0px -235px;
+}
 .pay_mask{
 	position: fixed;
 	background-color: rgba(0,0,0,0.5);
@@ -1170,6 +1179,7 @@ i.person_phone{
 }
 .button-orange{
 	background-color: #FF9A00;
+	color: #fff;
 }
 .button-aqua{
 	background-color: #00a1ea;
@@ -1437,6 +1447,191 @@ span.account_remove{
 span.account_img img{
 	width: 100%;
 }
+.preparation{
+		position: fixed;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		color: #ffffff;
+		z-index: 20;
+		text-align: center;
+		padding: 0px;
+
+	}
+	.preparation div.col {
+		padding: 0px;
+	}
+	.preparation div.col img{
+		width: 100%;
+		position: relative;
+		top: 6px;
+	}
+	.conditions_mask{
+		background-color: rgba(0,0,0,0.5);
+		position: fixed;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		top: 0px;
+		z-index: 20;
+		opacity: 0;
+	}
+	.conditions{
+		background-color: #f8f8f8;
+		position: fixed;
+		bottom: -500px;
+		left: 0px;
+		right: 0px;
+		z-index: 22;
+		padding: 0px;
+	}
+.select_conditions{
+		padding: 0px;
+		max-height: 220px;
+		overflow: scroll;
+	}
+.select_conditions div.col{
+		padding: 0px;
+	}
+.col-panel{
+		background-color: #fff;
+	}
+.col-panel div.panel{
+		background-color: #fff;
+		display: none;
+	}
+.col-panel div.panel label{
+		  position: relative;
+		  display: block;
+		  margin-left: 10px;
+		  margin-right: 10px;
+		  padding: 10px;
+		  padding-left: 0px;
+		  padding-right: 0px;
+		  font-size: 15px;
+		  color: #848484;
+		  border-bottom: solid 1px #ddd;
+	}
+
+.col-panel div.panel label span.icon{
+		display: inline-block;
+		width: 25px;
+		height: 25px;
+		background: url('../images/icon_radio_1.png') no-repeat center;
+		position: absolute;
+		right: 0px;
+		top: 8px;
+		display: none;
+	}
+
+.col-panel div.panel label span.icon input[type="radio"]{
+		display: block;
+		width: 25px;
+		height: 25px;
+		opacity:0;
+	}
+
+.condition_p{
+		margin: 0px;
+		text-align: center;
+		padding-top: 11px;
+		padding-bottom: 11px;
+		font-size: 15px;
+		color: #888;
+	}
+.p_white{
+		background-color: #fff;
+	}
+.operation_btn{
+		padding: 10px;
+		position: relative;
+		border-bottom: solid 1px #dcdcdc;
+	}
+.operation_btn span.right{
+		  position: absolute;
+		  right: 10px;
+		  top: 10px;
+		  font-size: 15px;
+		  color: #858585;
+	}
+.operation_btn span button{
+		  padding: 0px;
+		  color: #fff;
+		  min-height: 35px !important;
+		  line-height: 35px !important;
+	}
+.btn_two{
+		padding-bottom: 10px;
+		text-align: center;
+	}
+
+.btn_two button{
+		margin: 0px 5px;
+		width: 45%;
+	}
+.mr_ten{
+	margin: 10px;
+}
+.cl_w{
+	background-color: #fff;
+	height: 20px;
+}
+.passenger_lists{
+	background-color: #fff;
+}
+.passenger_letters{
+	background-color: #eee;
+	padding:5px 10px;
+}
+span.passenger_edit{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	background: url('../images/icon_edit1.png') no-repeat center;
+	margin-top: 20px;
+	margin-left: 8px;
+}
+p.pass_name{
+	font-size: 16px;
+	color: #000;
+	font-weight: bold;
+}
+p.pass_card,p.pass_phone{
+	font-size: 14px;
+	color: #bbb;
+}
+.passenger_con{
+	border-bottom: solid 1px #ddd;
+}
+.passenger_con div.col-80 p{
+	margin-bottom: 5px;
+}
+.pass_add_shell{
+	position: fixed;
+	background-color: #fff;
+	padding: 10px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	border-top: solid 1px #ddd;
+	z-index: 11;
+}
+.pass_add_shell button{
+	color: #fff;
+}
+.zimu_list{
+	position: absolute;
+	height: auto;
+	right: 10px;
+	top: 70px;
+	z-index: 10;
+}
+.zimu_list a{
+	display: block;
+	text-decoration: none;
+	color: #00a0e9
+}
+
 
 
 

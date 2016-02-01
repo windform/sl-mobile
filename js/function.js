@@ -167,13 +167,26 @@ function normalPassenger(){
             var passengerdata=json.data;
             var list='<div class="list city_font" style="margin-bottom:0px;">';
             for(var i=0; i<passengerdata.length; i++){
-              list+='<div class="item item-divider" id="'+passengerdata[i].id+'">'+passengerdata[i].name+'</div>';
+              //list+='<div class="passenger_lists" id="'+passengerdata[i].id+'">'+passengerdata[i].name+'</div>';
+              list+='<div class="passenger_lists"><div class="passenger_letters" id="'+passengerdata[i].id+'">'+passengerdata[i].name+'</div>';
               for(var j=0; j<passengerdata[i].child.length; j++){
-                list+='<span class="item">'+'<div class="row"><div class="col col-33"><p>'+passengerdata[i].child[j].name+'</p><p>身份证</p><p>手机/生日</p></div><div class="col col-50"><p>'+passengerdata[i].child[j].type+'</p><p>'+passengerdata[i].child[j].card+'</p><p>'+passengerdata[i].child[j].tel+'</p> </div><div class="col col-10"> <input type="checkbox" /> </div></div>'+'</span>';
+
+               // list+='<span class="item">'+'<div class="row"><div class="col col-33"><p>'+passengerdata[i].child[j].name+'</p><p>身份证</p><p>手机/生日</p></div><div class="col col-50"><p>'+passengerdata[i].child[j].type+'</p><p>'+passengerdata[i].child[j].card+'</p><p>'+passengerdata[i].child[j].tel+'</p> </div><div class="col col-10"> <input type="checkbox" /> </div></div>'+'</span>';
+                  list+='<div class="row passenger_con">'
+                      +'<div class="col col-20">'
+                           +'<span class="passenger_edit"></span>'
+                         +'</div>'
+                         +'<div class="col col-80">'
+                           +'<p class="pass_name">'+passengerdata[i].child[j].name+'</p>'
+                           +'<p class="pass_card"> 身份证号 '+passengerdata[i].child[j].card+' </p>'
+                           +'<p class="pass_phone"> 手机 '+passengerdata[i].child[j].tel+'</p>'
+                         +'</div>'
+                       +'</div>'
               }
             };
-            list+='</div>';
-            list+='<div class="row"> <div class="col"> <button class="button button-block button-dark confirm">确认选择</button></div> </div>'
+            list+='</div></div>';
+           // list+='<div class="row"> <div class="col"> <button class="button button-block button-orange confirm">确认选择</button></div> </div>'
+            list+='<div class="pass_add_shell"><button class="button button-block button-orange pass-confirm">确认选择</button></div>'
             $('.citylist').html(list);
             //x=null;
             $("button.confirm").live('tap',function(){
@@ -198,7 +211,8 @@ function normalPassenger(){
       })
 }
 
-function passengerAdd(){    
+function passengerAdd(){ 
+  $('.passenger_mask').remove();   
   var passenger_mask='<div class="passenger_mask">'
     +'<div class="bar bar-header bar-dark">'
       +'<a class="button icon-left ion-ios-arrow-back button-clear button-light passenger-back"></a>'
@@ -211,11 +225,13 @@ function passengerAdd(){
       +'</label>'
       +'<label class="item item-input passenger-type">'
         +'<span class="input-label">乘客类型</span>'
-       +'<a class="item-icon-right passenger-type-text" href="#">成人(>18岁)<i class="icon ion-ios-arrow-right"></i></a>'
+        +'<a class="item-icon-right pad_ten passenger-type-text">成人(>18岁)<span class="right r_pos"><i class="pay_more"></i></span></a>'
+      // +'<a class="item-icon-right passenger-type-text" href="#">成人(>18岁)<i class="icon ion-ios-arrow-right"></i></a>'
       +'</label>'
       +'<label class="item item-input cred-type">'
         +'<span class="input-label">证件类型</span>'
-       +'<a class="item-icon-right cred-type-text" href="#">身份证<i class="icon ion-ios-arrow-right"></i></a>'
+        +'<a class="item-icon-right pad_ten cred-type-text">身份证<span class="right r_pos"><i class="pay_more"></i></span></a>'
+       //+'<a class="item-icon-right cred-type-text" href="#">身份证<i class="icon ion-ios-arrow-right"></i></a>'
       +'</label>'
   
       +'<label class="item item-input">'
@@ -228,8 +244,8 @@ function passengerAdd(){
       +'</label>'
     +'</div>'
     +'<div class="padding">'
-        +'<button class="button button-block button-dark passenger-save">保存</button>'
-        +'<p class="text-left">保存后自动添加为常旅客</p>'
+        +'<button class="button button-block button-orange passenger-save">保存</button>'
+        +'<p class="text-right">保存后自动添加为常旅客</p>'
     +'</div></div>'
 
     $('body').append(passenger_mask);
@@ -242,11 +258,67 @@ function passengerAdd(){
     });
     $('.cred-type').on('tap',function(event){
       event.stopPropagation();
-      infoSelect('cred-type-text','选择证件类型',['身份证','护照','军官证','回乡证','户口本','警官证','其他']);
+      orderstatusSelect('.cred-type-text',['身份证','护照','军官证','回乡证','户口本','警官证','其他']);
+  
     });
     $('.passenger-type').on('tap',function(event){
       event.stopPropagation();
-      infoSelect('passenger-type-text','选择乘客类型',['成人(>12岁)','儿童(2至12岁)'])
+      orderstatusSelect('.passenger-type-text',['成人 >12岁','儿童 2岁(含)-12岁(不含)']);
+    })
+
+}
+
+function passengerRevise(){ 
+  $('.passenger_mask').remove();   
+  var passenger_mask='<div class="passenger_mask">'
+    +'<div class="bar bar-header bar-dark">'
+      +'<a class="button icon-left ion-ios-arrow-back button-clear button-light passenger-back"></a>'
+      +'<h1 class="title">修改乘客信息</h1>'
+    +'</div> '
+    +'<div class="list list-inset passenger-list">'
+      +'<label class="item item-input">'
+        +'<span class="input-label">姓名</span>'
+        +'<input type="text">'
+      +'</label>'
+      +'<label class="item item-input passenger-type">'
+        +'<span class="input-label">乘客类型</span>'
+        +'<a class="item-icon-right pad_ten passenger-type-text">成人(>18岁)<span class="right r_pos"><i class="pay_more"></i></span></a>'
+     
+      +'</label>'
+      +'<label class="item item-input cred-type">'
+        +'<span class="input-label">证件类型</span>'
+        +'<a class="item-icon-right pad_ten cred-type-text">身份证<span class="right r_pos"><i class="pay_more"></i></span></a>'
+      +'</label>'
+  
+      +'<label class="item item-input">'
+        +'<span class="input-label">证件号码</span>'
+        +'<input type="text">'
+      +'</label>'
+      +'<label class="item item-input">'
+        +'<span class="input-label">手机号码</span>'
+        +'<input type="text">'
+      +'</label>'
+    +'</div>'
+    +'<div class="padding">'
+        +'<button class="button button-block button-orange passenger-save">确认修改</button>'
+    +'</div></div>'
+
+    $('body').append(passenger_mask);
+     $('.passenger_mask').animate({
+           left:0
+      },500);
+    $('.passenger-back,.passenger-save').on('tap',function(){
+        $('.passenger_mask').animate({left:800}, 500);
+        setTimeout(function(){$('.passenger_mask').remove()},500)
+    });
+    $('.cred-type').on('tap',function(event){
+      event.stopPropagation();
+      orderstatusSelect('.cred-type-text',['身份证','护照','军官证','回乡证','户口本','警官证','其他']);
+  
+    });
+    $('.passenger-type').on('tap',function(event){
+      event.stopPropagation();
+      orderstatusSelect('.passenger-type-text',['成人 >12岁','儿童 2岁(含)-12岁(不含)']);
     })
 
 }
@@ -275,7 +347,7 @@ function infoSelect(cla,tit,arr){
     for(var j=0; j<arr.length;j++){
       $('.credentials li').eq(j).on('tap',function(){
         var txt=$(this).find('label').text();
-        $('.'+cla).html(txt+'<i class="icon ion-ios-arrow-right"></i>');
+        $('.'+cla).html(txt+'<span class="right r_pos"><i class="pay_more"></i></span>');
       })
     }
     $('.btn-close').on('tap',function(){
@@ -399,6 +471,39 @@ function pop2(arr,url){
       $('.pop_close').on('tap',function(){
         $('.pay_mask').animate({opacity:0},300);
             setTimeout(function(){$('.pay_mask').remove()},310);
+      })
+}
+
+function pop3(arr,url){
+  $('.pay_mask').remove();
+      var pop='<div class="pay_mask">'
+              +'<div class="pop">'
+              +'<div class="pop_first">'
+                +'<strong class="pop_title">'+arr[0]+'</strong>'
+                +'<span class="pop_close"></span>'
+              +'</div>'
+              +'<div class="pop_second">'
+                +'<div class="pop_content">'+arr[1]+'</div>'
+                +'<div class="btn_group btn_two"> '
+                  +'<button class="button button-aqua lianbi-l">'+arr[2]+'</button>'
+                  +'<button class="button button-orange lianbi-r">'+arr[3]+'</button>'  
+                +'</div>'
+              +'</div>'
+            +'</div>'
+        +'</div>'
+      $('body').append(pop);
+      $('.lianbi-l').on('tap',function(){
+           $('.pay_mask').animate({opacity:0},300);
+          setTimeout(function(){$('.pay_mask').remove()},310);
+      })
+      $('.lianbi-r').on('tap',function(){
+          $('.pay_mask').animate({opacity:0},300);
+          setTimeout(function(){$('.pay_mask').remove()},310);
+      })
+      $('.pay_mask').animate({opacity:1},300);
+      $('.pop_close').on('tap',function(){
+        $('.pay_mask').animate({opacity:0},300);
+        setTimeout(function(){$('.pay_mask').remove()},310);
       })
 }
 
@@ -636,7 +741,7 @@ function setAccount(){
             +'<a class="item-icon-right pad_ten pay-platform-text" href="#">财付通<span class="right r_pos"><i class="pay_more"></i></span></a>'
           +'</label>'
           +'<label class="item item-input">'
-            +'<span class="input-label"> 交易账号</span>'
+            +'<span class="input-label">交易账号</span>'
             +'<input type="password">'
           +'</label>'
       +'</div>'
@@ -658,12 +763,75 @@ function setAccount(){
   }
 
 
+function conditionSelect(arr){
+      $('.conditions_mask').remove();
+      var conditionSelect='<div class="conditions_mask">'
+      +'<div class="conditions">'
+        +'<div class="operation_btn">'
+          +'<span class="left"><button class="button button-assertive condition-cancel">取消</button></span>'
+          +'<span class="right"><button class="button button-aqua condition-confirm">确定</button></span>'
+        +'</div>'
+        +'<div class="row select_conditions">'
+          +'<div class="col col-20">'
+            +'<p class="condition_p p_white">航空公司</p>'
+            +'<p class="condition_p">起飞时间</p> '
+          +'</div>'
+          +'<div class="col col-80 col-panel">'
+            +'<div class="panel">'
+              for(var i=0; i<arr.length;i++){
+                conditionSelect+='<label for="radio'+i+'">'+arr[i]+'<span class="icon"> <input type="radio" id="radio'+i+'" name="airline_com"> </span></label>'
+              }
+            conditionSelect+='</div>'
+            +'<div class="panel">'
+              +'<label for="radio00">不限<span class="icon"> <input type="radio" id="radio00" name="airline_time"> </span></label>'
+              +'<label for="radio01">6:00-12:00<span class="icon"> <input type="radio" id="radio01" name="airline_time"> </span></label>'
+              +'<label for="radio02">12:00-18:00<span class="icon"> <input type="radio" id="radio02" name="airline_time"> </span></label>'
+              +'<label for="radio03">18:00-24:00<span class="icon"> <input type="radio" id="radio03" name="airline_time"> </span></label>'
+            +'</div>'
+          +'</div>'
+        +'</div>'
+      +'</div>'
+    +'</div>'
+    $('body').append(conditionSelect);
+    $('.conditions_mask').animate({opacity:1},300);
+    $('.conditions').animate({bottom:0},300);
+    $('.condition_p').eq(0).addClass('p_white');
+    for(var i=0; i<$('.panel').size(); i++){
+      $('.panel').eq(i).find('label').first().find('.icon').css('display','block');
+      $('.panel').eq(i).find('label').first().find('input[type="radio"]').attr('checked',true);
+    }
+    $('.panel').eq(0).css('display','block');
+    $('.condition_p').on('tap',function(){
+      $('.condition_p').removeClass('p_white');
+      $(this).addClass('p_white');
+      var ind=$(this).index();
+      $('.panel').css('display','none');
+      $('.panel').eq(ind).css('display','block');
+    })
+    $('.panel label').on('tap',function(){
+      $(this).parent().find('span.icon').css('display','none');
+      $(this).find('span.icon').css('display','block');
+    })
+    $('.condition-cancel,.condition-confirm').on('tap',function(){
+      $('.conditions_mask').animate({opacity:0},300);
+      $('.conditions').animate({bottom:-500},500);
+      setTimeout(function(){$('.conditions_mask').remove()},510)  
+    })
+
+
+    }
+
+
+
+
+
+
 
 var pay_platform_data=['财付通','支付宝','汇付天下','快钱','易宝'];
 
 //保险订单筛选虚假模拟数据
 var ensure_dress_data=['所有订单','已出票','已支付','已改签','已退票','已拒票']
-var company_dress_data=['所有航空公司','南方航','中国航空','奥凯航空','春秋航空','东方航空']
+var company_dress_data=['所有航空公司','南方航空','中国航空','奥凯航空','春秋航空','东方航空']
 
 //保险订单列表虚假模拟数据
 var ensureorderlistdata=[{

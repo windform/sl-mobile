@@ -51,8 +51,16 @@ $(function () {
     //3、城市交换
 	exchange();
 
-    //search_list.html search_list1.html
-    //1、模拟数据填充
+    //search_list.html
+    //1、筛选条件
+    $('.preparation_filter').on('tap',function(){
+        conditionSelect(aircompany_dress_data);
+    })
+
+    //航空公司筛选条件
+   var aircompany_dress_data=['不限','南方航空','东方航空','奥凯航空','西部航空','汉莎航空','中国航空','美联航空']
+
+
 
     //airline_detail.html
 
@@ -245,6 +253,12 @@ $(function () {
          
     })
 
+    //order_detail0.html
+    //1、取消订单
+    $('.neworder_cancel').on('tap',function(){
+        pop3(['取消订单','确认取消订单？','返回','确认'])
+    })
+
 
     //plane_orderlist.html
     //1、模拟数据填充
@@ -395,6 +409,9 @@ $(function () {
             if($(this).is(":checked")){
                 $(this).next('.square').animate({left:37},100,'ease-in-out');
                 $(this).parent().animate({backgroundColor:'#00a1ea'},100,'ease-in-out');
+                var arr=['协议','一个账号只能签约一个汇付交易账号，签约成功后不可更改、删除，是否确定签约？','确定','取消'];
+                var url='';
+                pop3(arr,url);
             }else{
                 $(this).next('.square').animate({left:1},100,'ease-in-out');
                 $(this).parent().animate({backgroundColor:'#dd2223'},100,'ease-in-out');
@@ -406,6 +423,17 @@ $(function () {
     //2、设置账号
     $('.set_account').on('tap',function(){
          setAccount();
+    })
+
+
+    //passenger.html
+    //1、添加常旅客
+    $('.pass-add').on('tap',function(){
+        passengerAdd();
+    })
+    //2、修改常旅客信息
+    $('.passenger_edit').on('tap',function(){
+        passengerRevise();
     })
     
 
