@@ -29,7 +29,7 @@
 		<div class="bar bar-header bar-dark">
 		<a class="button icon-left ion-ios-arrow-back button-clear button-light" onClick="window.history.back()"></a>
 		<h1 class="title">机票预订</h1>
-		<a class="button icon-right ion-ios-person button-clear button-light"></a></div>
+		<a class="button icon-right ion-ios-person button-clear button-light" href="person_center.html"></a></div>
 	</div>
 	<div class="frame_content1">
 		
@@ -50,13 +50,13 @@
     <div class="col col_paddingno">
          <label class="item item-input item-floating-label item_no_border">
           <span class="input-label has-input">出发城市</span>
-          <input class="input_bottom_border" id="start_city" type="text" placeholder="出发城市" readonly>
+          <input class="input_bottom_border start_city" type="text" placeholder="出发城市" readonly value="北京">
         </label>
     </div>
     <div class="col col_paddingno">
         <label class="item item-input item-floating-label item_no_border item_no_border_right">
           <span class="input-label has-input span_right">到达城市</span>
-          <input dir="rtl" class="input_bottom_border input_right" id="end_city" type="text" placeholder="到达城市" readonly>
+          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" placeholder="到达城市" readonly value="上海">
         </label>
     </div>
 </div>
@@ -81,13 +81,13 @@
     <div class="col col_paddingno">
          <label class="item item-input item-floating-label item_no_border">
           <span class="input-label has-input">出发城市</span>
-          <input class="input_bottom_border start_city" type="text" placeholder="出发城市" readonly>
+          <input class="input_bottom_border start_city" type="text" placeholder="出发城市" value="成都" readonly>
         </label>
     </div>
     <div class="col col_paddingno">
         <label class="item item-input item-floating-label item_no_border item_no_border_right">
           <span class="input-label has-input span_right">到达城市</span>
-          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" placeholder="到达城市" readonly>
+          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" value="广州" placeholder="到达城市" readonly>
         </label>
     </div>
 </div>
@@ -116,13 +116,13 @@
     <div class="col col_paddingno">
          <label class="item item-input item-floating-label item_no_border">
           <span class="input-label has-input">出发城市</span>
-          <input class="input_bottom_border start_city" type="text" placeholder="出发城市" readonly>
+          <input class="input_bottom_border start_city" type="text" placeholder="出发城市" value="杭州" readonly>
         </label>
     </div>
     <div class="col col_paddingno">
         <label class="item item-input item-floating-label item_no_border item_no_border_right">
           <span class="input-label has-input span_right">到达城市</span>
-          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" placeholder="到达城市" readonly>
+          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" value="兰州" placeholder="到达城市" readonly>
         </label>
     </div>
 </div>
@@ -144,14 +144,14 @@
     <a class="button ion-arrow-swap button-clear button-dark exchange" style="position: absolute; z-index: 20"></a>
     <div class="col col_paddingno">
          <label class="item item-input item-floating-label item_no_border">
-          <span class="input-label has-input">出发城市</span>
-          <input class="input_bottom_border start_city" type="text" placeholder="出发城市" readonly>
+          <span class="input-label has-input">中转城市</span>
+          <input class="input_bottom_border start_city" type="text" value="兰州" placeholder="出发城市" readonly>
         </label>
     </div>
     <div class="col col_paddingno">
         <label class="item item-input item-floating-label item_no_border item_no_border_right">
           <span class="input-label has-input span_right">到达城市</span>
-          <input dir="rtl" class="input_bottom_border input_right end_city" type="text" placeholder="到达城市" readonly>
+          <input dir="rtl" class="input_bottom_border input_right end_city" value="乌鲁木齐" type="text" placeholder="到达城市" readonly>
         </label>
     </div>
 </div>
@@ -176,7 +176,7 @@
 
 
 <div class="padding">
-    <button class="button button-block button-dark search" id="search0">
+    <button class="button button-block button-orange search" id="search0">
       查询预定
     </button>
 </div>

@@ -49,7 +49,7 @@
 		</div>
 		<div class="row bor_bot">
 			<div class="col text_center">
-				<span>logo</span>
+				<span class="logo"><img src="images/company_logo.jpg" alt=""></span>
 				<span>吉祥HO1252</span>
 				<span>321</span>
 				<span>不经停</span>
@@ -159,8 +159,8 @@
 	  </div>
 	</div>
 
-	<div class="padding">
-    	<button class="button button-block button-dark" id="next">下一步</button>
+	<div class="padding font_14">
+    	<button class="button button-block button-orange" id="next">下一步</button>
 	</div>
 
 	</div>
@@ -219,7 +219,187 @@
 				</div>
 			</div> 
 		</div>
-		
 	</div> -->
+
+
+<div class="city" style="left:0px;display:none">
+  <div class="bar bar-header bar-dark">
+    <a class="button icon-left ion-ios-arrow-back button-clear button-light">
+    </a>
+    <h1 class="title">
+      选择常旅客
+    </h1>
+    <a class="button icon-right ion-loop button-clear button-light">
+    </a>
+  </div>
+  <div class="list list-inset" style="margin-top:55px; margin-bottom:10px">
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon">
+      </i>
+      <input type="text" placeholder="输入姓名或拼音首字母进行筛选">
+    </label>
+  </div>
+  <div class="citylist" style="left: 0px;">
+	  <div class="cl_w"></div>
+	  <div class="passenger_lists">
+		        <div class="passenger_letters" id="20">
+		          A
+		        </div>
+		        <div class="row passenger_con">
+		          <div class="col col-20">
+		            <span class="passenger_edit">
+		            </span>
+		          </div>
+		          <div class="col col-80">
+			            <p class="pass_name">
+			              安蕾
+			            </p>
+			            <p class="pass_card">
+			              身份证号 610112198306184529
+			            </p>
+			            <p class="pass_phone">
+			              手机 18999101660
+			            </p>
+		          </div>
+		          <span class="checkbox_span unchecked_span">
+		          		<input type="checkbox">
+		          </span>
+		        </div>
+		        <div class="row passenger_con">
+		          <div class="col col-20">
+		            <span class="passenger_edit">
+		            </span>
+		          </div>
+		          <div class="col col-80">
+		            <p class="pass_name">
+		              阿吉古丽依名
+		            </p>
+		            <p class="pass_card">
+		              身份证号 610112198306184529
+		            </p>
+		            <p class="pass_phone">
+		              手机 18999101660
+		            </p>
+		          </div>
+		          <span class="checkbox_span unchecked_span">
+		          		<input type="checkbox">
+		          </span>
+		        </div>
+	  </div>
+	  <div class="passenger_lists">
+	          <div class="passenger_letters" id="21">
+	            B
+	          </div>
+	         <div class="row passenger_con">
+		            <div class="col col-20">
+		              <span class="passenger_edit">
+		              </span>
+		            </div>
+		            <div class="col col-80">
+		              <p class="pass_name">
+		                小明
+		              </p>
+		              <p class="pass_card">
+		                身份证号 510304200707025825
+		              </p>
+		              <p class="pass_phone">
+		                手机 2013-12-16
+		              </p>
+		            </div>
+		            <span class="checkbox_span unchecked_span">
+		          		<input type="checkbox">
+		          </span>
+	          </div>
+	  </div>
+      <div class="passenger_lists">
+            <div class="passenger_letters" id="22">
+              C
+            </div>
+            <div class="row passenger_con">
+              <div class="col col-20">
+                <span class="passenger_edit">
+                </span>
+              </div>
+              <div class="col col-80">
+                <p class="pass_name">
+                  陈建明
+                </p>
+                <p class="pass_card">
+                  身份证号 510304200707025825
+                </p>
+                <p class="pass_phone">
+                  手机 13514512698
+                </p>
+              </div>
+              <span class="checkbox_span unchecked_span">
+		          		<input type="checkbox">
+		          </span>
+            </div>
+            <div class="row passenger_con">
+              <div class="col col-20">
+                <span class="passenger_edit">
+                </span>
+              </div>
+              <div class="col col-80">
+                <p class="pass_name">
+                  程浩
+                </p>
+                <p class="pass_card">
+                  身份证号 510304200707025825
+                </p>
+                <p class="pass_phone">
+                  手机 15845678945
+                </p>
+              </div>
+              <span class="checkbox_span unchecked_span">
+		          		<input type="checkbox">
+		          </span>
+
+            </div>
+      </div>
+      <div class="pass_add_shell">
+		<button class="button button-block button-orange pass-add">确认选择</button>
+	</div>
+    
+  </div>
+  <div class="catalog" style="right: 5px;">
+    <div>
+      <a href="#20">
+        A
+      </a>
+      <a href="#21">
+        B
+      </a>
+      <a href="#22">
+        C
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<script>
+	
+	$(function(){
+		$('.checkbox_span').click(function(){
+			var bg=$(this).attr('class');
+			switch(bg){
+				case 'checkbox_span checked_span':{
+					$(this).attr('class','checkbox_span unchecked_span');
+					break;
+				}
+				case 'checkbox_span unchecked_span':{
+					$(this).attr('class','checkbox_span checked_span');
+					break;	
+				}
+			}
+
+		});
+	})
+</script>
+
+
+
+
 </body>
 </html>

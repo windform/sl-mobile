@@ -24,9 +24,9 @@
 <body>
 	<div class="frame_header1">
 		<div class="bar bar-header bar-dark">
-		<a class="button icon-left ion-ios-arrow-back button-clear button-light" onClick="window.history.back()"></a>
+		<a class="button icon-left ion-ios-arrow-back button-clear button-light" href="plane_orderlist.html"></a>
 		<h1 class="title">订单详细</h1>
-		 <a class="button icon-right ion-ios-home button-clear button-light" href="index.html"></a>
+		 <a class="button icon-right button-clear button-light neworder_cancel">取消订单</a>
 		</div> 
 	</div>
 	<div class="frame_content1">
@@ -47,7 +47,7 @@
 	  		</div>
 	  		<div class="col col-75">
 	  			<p>￥1151.52</p>
-	  			<p>已出票</p>
+	  			<p>新订单</p>
 	  			<p>2015110810507118</p>
 	  			<p>2015-11-08 10:50:22</p>
 	  		</div>
@@ -79,7 +79,9 @@
 		</div>
 		<div class="row bor_bot" style="padding:0px">
 			<div class="col text_center" style="padding-left:0px; padding-right:0px">
-				<span>logo</span>
+				<span class="logo">
+					<img src="images/company_logo.jpg" alt="">
+				</span>
 				<span>吉祥HO1252</span>
 				<span>321</span>
 				<span>不经停</span>
@@ -192,13 +194,35 @@
 	  </div>
 	</div>
 
-<div class="padding">
-	<button class="button button-block button-dark btn-ticketout">申请退改签</button>
-</div>
+
+
+	<div class="row order_birth">
+		<div class="col">
+			<p>支付价格</p>
+			<p>￥4520</p>
+		</div>
+		<div class="col">
+			<p>总利润</p>
+			<p>￥50.00</p>
+		</div>
+		<div class="col">
+			<p>保险费用</p>
+			<p>￥10.00</p>
+		</div>
+		<div class="col">
+			<button class="button button-assertive pay-ticket-price">支付</button>
+		</div>
+	</div>
 
 </div>
 
-
+<script>
+	$(function(){
+		$('.pay-ticket-price').on('tap',function(){
+			window.location.href='pay.html'
+		})
+	})
+</script>
 
 </body>
 </html>

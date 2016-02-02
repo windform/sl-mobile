@@ -4725,7 +4725,8 @@ a.subdued {
   .tabs-striped.tabs-color-dark .tab-item.tab-item-active, .tabs-striped.tabs-color-dark .tab-item.active, .tabs-striped.tabs-color-dark .tab-item.activated {
     margin-top: -2px;
     color: #444;
-    border: 0 solid #444;
+   /* border: 0 solid #444;*/
+   border: 0 solid #00a0e9;
     border-top-width: 2px; }
     .tabs-striped.tabs-color-dark .tab-item.tab-item-active .badge, .tabs-striped.tabs-color-dark .tab-item.active .badge, .tabs-striped.tabs-color-dark .tab-item.activated .badge {
       top: 2px;
@@ -6481,7 +6482,7 @@ button.item.item-button-right {
   padding-top: 1px;
   padding-bottom: 1px;
  /*  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);  */
-  border:solid 1px #ccc;
+/*  border:solid 1px #ccc;*/
 
 }
   .card .item {
@@ -8797,8 +8798,8 @@ a.button {
     padding: 0; }
 
 .row + .row {
- /* margin-top: -5px;*/
- margin-top: 5px;
+ margin-top: -5px;
+/* margin-top: 5px;*/
   padding-top: 0; }
 
 .col {
@@ -9162,7 +9163,10 @@ a.button {
  * --------------------------------------------------
  */
 .padding {
-  padding: 10px; }
+  padding: 10px; 
+  background-color: #fff;
+
+}
 
 .padding-top,
 .padding-vertical {

@@ -65,7 +65,7 @@ function searchList(dataName,url){
             +'<span class="reach_time">'+dataName[i].reach_time+'</span><span class="reach_city">'+dataName[i].reach_city+'</span><span class="ticket_point">返点：'+dataName[i].ticket_point+'</span><span class="ticket_price">票面价:'+dataName[i].ticket_price+'</span>'
             +'</div>'
             +'<div class="search_item">'
-            +'<span class="logo">logo</span><span class="company">'+dataName[i].company+'</span><span class="air_type">'+dataName[i].air_type+'</span><span class="stop">'+dataName[i].stop+'</span><span class="food">'+dataName[i].food+'</span><span class="seat">座位数:'+dataName[i].seat+'</span><span class="cabin">'+dataName[i].cabin+'</span>'
+            +'<span class="logo"><img src="'+dataName[i].logo+'" alt=""></span><span class="company">'+dataName[i].company+'</span><span class="air_type">'+dataName[i].air_type+'</span><span class="stop">'+dataName[i].stop+'</span><span class="food">'+dataName[i].food+'</span><span class="seat">座位数:'+dataName[i].seat+'</span><span class="cabin">'+dataName[i].cabin+'</span>'
             +'</div>'
             +'</div></a>'
     }
@@ -93,10 +93,16 @@ function airlineDetail(url){
 }
 
  function output(){
+          $('.city').remove();
           var city='<div class="city"><div class="bar bar-header bar-dark"><a class="button icon-left ion-ios-arrow-back button-clear button-light"></a><h1 class="title">选择城市</h1></div><div class="list list-inset" style="margin-top:55px; margin-bottom:10px"><label class="item item-input"><i class="icon ion-search placeholder-icon"></i><input type="text" placeholder="请输入城市名"></label></div><div class="citylist"></div><div class="catalog"></div></div>';
             $(city).appendTo('body');
             $('.city,.citylist').animate({left:0},600,'ease-in');
             $('.catalog').animate({right:5},600,'ease-in');
+        $('.ion-ios-arrow-back').on('tap',function(){
+            $('.city,.citylist').animate({left:500},600,'ease-out');
+            $('.catalog').animate({right:4955},600,'ease-out');
+            setTimeout(function(){$('.city').remove()},610)
+        })
 
         $.ajax({
         url:'data/city.json',
@@ -533,6 +539,7 @@ function webBank(title,arr){
        $('body').append(bank_logo);
        $('.bank_page').animate({left:0},300);
        setTimeout(function(){$('.bank_logo').css('display','flex')},300)
+       // setTimeout(function(){$('.bank_logo').css('display','-webkit-flex')},300)
        $('.webbank_close').on('tap',function(){
         $('.bank_page').animate({left:500},300);
         $('.bank_logo').css('display','none');
@@ -559,11 +566,11 @@ function ensureDress(){
       +'</label>'
       +'<label class="item item-input order-status">'
         +'<span class="input-label">订单状态</span>'
-        +'<a class="item-icon-right order-type-text" href="#">所有订单<i class="icon ion-ios-arrow-right"></i></a>'
+        +'<a class="item-icon-right order-type-text" href="#">所有订单<span class="right r_pos"><i class="pay_more"></i></span></a>'
       +'</label>'
     +'</div>'
     +'<div class="padding">'
-        +'<button class="button button-block button-dark passenger-save">查询</button>'
+        +'<button class="button button-block button-orange passenger-save">查询</button>'
     +'</div></div>'
 
     $('body').append(passenger_mask);
@@ -614,15 +621,15 @@ function planeDress(){
       +'</label>'
       +'<label class="item item-input order-status1">'
         +'<span class="input-label">订单状态</span>'
-        +'<a class="item-icon-right order-type-text" href="#">所有订单<i class="icon ion-ios-arrow-right"></i></a>'
+        +'<a class="item-icon-right order-type-text" href="#">所有订单<span class="right r_pos"><i class="pay_more"></i></span></a>'
       +'</label>'
       +'<label class="item item-input order-status2">'
         +'<span class="input-label">航空公司</span>'
-        +'<a class="item-icon-right company-name-text" href="#">所有航空公司<i class="icon ion-ios-arrow-right"></i></a>'
+        +'<a class="item-icon-right company-name-text" href="#">所有航空公司<span class="right r_pos"><i class="pay_more"></i></span></a>'
       +'</label>'
     +'</div>'
     +'<div class="padding">'
-        +'<button class="button button-block button-dark passenger-save">查询</button>'
+        +'<button class="button button-block button-orange passenger-save">查询</button>'
     +'</div></div>'
 
     $('body').append(passenger_mask);
@@ -1011,7 +1018,7 @@ var listdata=[{
     "reach_city":"上海虹桥T2",
     "ticket_point":"3.3%",
     "ticket_price":"￥560",
-    "logo":"",
+    "logo":"images/company_logo.jpg",
     "company":"吉祥HO1252",
     "air_type":"321",
     "stop":"不经停",
@@ -1026,7 +1033,7 @@ var listdata=[{
     "reach_city":"上海虹桥T2",
     "ticket_point":"3.0%",
     "ticket_price":"￥580",
-    "logo":"",
+    "logo":"images/company_logo.jpg",
     "company":"吉祥HO1252",
     "air_type":"321",
     "stop":"经停",
@@ -1041,7 +1048,7 @@ var listdata=[{
     "reach_city":"上海虹桥T2",
     "ticket_point":"1.2%",
     "ticket_price":"￥800",
-    "logo":"",
+    "logo":"images/company_logo.jpg",
     "company":"吉祥HO1252",
     "air_type":"321",
     "stop":"不经停",
@@ -1056,7 +1063,7 @@ var listdata=[{
     "reach_city":"上海虹桥T1",
     "ticket_point":"5.0%",
     "ticket_price":"￥800",
-    "logo":"",
+    "logo":"images/company_logo.jpg",
     "company":"南航CZ1602",
     "air_type":"320",
     "stop":"经停",

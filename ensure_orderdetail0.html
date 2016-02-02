@@ -26,7 +26,7 @@
 		<div class="bar bar-header bar-dark">
 		<a class="button icon-left ion-ios-arrow-back button-clear button-light" onClick="window.history.back()"></a>
 		<h1 class="title">订单详细</h1>
-		<a class="button icon-right button-clear button-light">取消订单</a></div>
+		<a class="button icon-right button-clear button-light neworder_cancel">取消订单</a></div>
 	</div>
 	<div class="frame_content1">
 		<div class="ensuredetail_search_list">
@@ -350,11 +350,15 @@
 						+'<p>￥5.50</p>'
 					+'</div>'
 					+'<div class="col">'
-						+'<button class="button button-assertive">支付</button>'
+						+'<button class="button button-assertive ensure_fu">支付</button>'
 					+'</div>'
 				+'</div>'
 
 		$('div.list').html(order_info+product_info+ensureform_info+benefit_info+ensureform_pay)
+
+		$('.ensure_fu').on('tap',function(){
+			window.location.href='pay.html';
+		})
 
 
 

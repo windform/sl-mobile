@@ -1,8 +1,7 @@
 // JavaScript Document
 $(function () {
     //初始化ajax请求
-    loadUrl('templets/index.html');
-	header('.frame_header','首页');
+   
 
     //单击底部选项卡发送对应的ajax请求
     $("#bottom-tabs a").tap(function () {
@@ -29,12 +28,23 @@ $(function () {
     $("#start_city").focus(function(event) {
             event.stopPropagation();
             output();
-
       });
     $("#end_city").focus(function(event) {
             event.stopPropagation();
             output();
       });
+    //交换城市
+    $('.exchange').click(function(){
+        var start_city=$(this).parent().find('.start_city').val();
+        var end_city=$(this).parent().find('.end_city').val();
+       // var halfway_city=$(this).parent().find('.halfway_city').val()
+        //alert(start_city+','+end_city);
+        $(this).parent().find('.start_city').val(end_city);
+        $(this).parent().find('.end_city').val(start_city);
+       // $(this).parent().find('.halfway_city').val(end_city);
+
+
+    })
 
 	
 
@@ -56,9 +66,45 @@ $(function () {
     $('.preparation_filter').on('tap',function(){
         conditionSelect(aircompany_dress_data);
     })
-
-    //航空公司筛选条件
+    //2、航空公司筛选条件
    var aircompany_dress_data=['不限','南方航空','东方航空','奥凯航空','西部航空','汉莎航空','中国航空','美联航空']
+   //3、时间条件筛选
+   $('.preparation_time').on('tap',function(){
+        var src=$(this).find('img').attr('src');
+        switch(src){
+            case 'images/search_result_time.png':{
+                $(this).find('img').attr('src','images/search_result_time_ascending.png');
+                break;
+            }
+            case 'images/search_result_time_ascending.png':{
+                $(this).find('img').attr('src','images/search_result_time_descending.png');
+                break;
+            };
+            case 'images/search_result_time_descending.png':{
+                $(this).find('img').attr('src','images/search_result_time.png');
+                break;
+            };
+        }
+   })
+   //4、价格条件筛选
+   $('.preparation_price').on('tap',function(){
+         var src=$(this).find('img').attr('src');
+         switch(src){
+            case 'images/search_result_price.png':{
+                $(this).find('img').attr('src','images/search_result_price_ascending.png');
+                break;
+            }
+            case 'images/search_result_price_ascending.png':{
+                $(this).find('img').attr('src','images/search_result_price_descending.png');
+                break;
+            };
+            case 'images/search_result_price_descending.png':{
+                $(this).find('img').attr('src','images/search_result_price.png');
+                break;
+            };
+        }
+
+   })
 
 
 
@@ -85,8 +131,10 @@ $(function () {
     //4、单击"选择常旅客"，进入"选择常旅客"界面
     $(".passenger-select").live('tap',function(){
         event.stopPropagation();
-        $('.city').remove();
-        normalPassenger();
+        //$('.city').remove();
+        //normalPassenger();
+        //alert('hello');
+        $('.city').css('display','block');
         setTimeout(function(){
             $('.passenger_staff').remove();
         },800)
